@@ -35,7 +35,7 @@ const About = () => {
       </section>
       <section className='flex lg:mx-20 md:mx-8 mx-5 gap-16 py-10 text-[#000A3E]'>
         <div className='flex flex-1'>
-          <h2 className='font-semibold leading-[60px] text-[45px]'>The Whitesands Agency is one of the world's leading providers of Logistics solutions.</h2>
+          <h2 className='font-semibold leading-[60px] text-[45px]'>The Whitesands Agency is one of the world&apos;s leading providers of Logistics solutions.</h2>
         </div>
         <div className='flex flex-1'>
           <p className='text-justify text-[25px]'>The company combines its core products of Air Freight, Ocean Freight and logistics to deliver globally integrated, tailor-made end-to-end solutions for eleven core industries. Drawing on in-depth industry know-how and customized IT systems, Whitesands Agency manages the needs of its customers supply chains, no matter how demanding they might be.</p>

@@ -40,7 +40,7 @@ const Contact = () => {
       </section>
       <section className='flex m-20 relative items-center'>
         <div className='text-white bg-[#000A3E] w-[60%] px-10 py-20 flex flex-col gap-10'>
-          <h1 className='font-bold text-[48px]'>Got a Delivery? <br />Let's talk</h1>
+          <h1 className='font-bold text-[48px]'>Got a Delivery? <br />Let&apos;s talk</h1>
           <p className='text-[25px] font-medium'>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
         </div>
         <div className='bg-[#FF5C00] w-[405px] h-[411px]'></div>

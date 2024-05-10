@@ -122,7 +122,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-3 lg:w-[500px]">
             <p className="font-bold md:text-[17px]">There are many variations of passagesof Lorem Ipsum available, but the majorit have suffered alteration in some form, by injected humour, or by randomised word.</p>
-            <p className="md:text-[16px]">You need to be sure there isn't anything embarassing hidden in the middle of text. All the lorem ipsum generators on the internet.</p>
+            <p className="md:text-[16px]">You need to be sure there isn&apos;t anything embarassing hidden in the middle of text. All the lorem ipsum generators on the internet.</p>
           </div>
         </div>
       </section>
@@ -261,7 +261,7 @@ export default function Home() {
             <div className="w-[10px] h-[10px] md:w-[15px] md:h-[15px] bg-[#FF3514]"/>
             <h5 className="text-[18px] md:text-[20px] lg:text-[28px] text-[#FF3514] font-medium">Frequently Asked Questions</h5>
           </div>
-          <h1 className="text-[25px] md:text-[35px] lg:text-[50px] leading-9 text-[#000A3E] font-semibold lg:leading-[50px] py-5">We're here to change your business look</h1>
+          <h1 className="text-[25px] md:text-[35px] lg:text-[50px] leading-9 text-[#000A3E] font-semibold lg:leading-[50px] py-5">We&apos;re here to change your business look</h1>
           <div className="h-full lg:mr-10">
             <div className="max-w-[800px] text-black">
               {faqData.map((data, index) => {
