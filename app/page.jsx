@@ -52,7 +52,7 @@ export default function Home() {
 
   return (
     <main>
-      {/* <Navbar /> */}
+      <Navbar />
       <section className="relative w-[100%] flex" id="hero">
         <div className="p-5 flex h-[380px] md:h-[410px] lg:h-[500px] w-[100%] bg-[#000A3E]">
           <div className="w-[100%] h-[100%] flex flex-col mt-10 lg:mt-16">

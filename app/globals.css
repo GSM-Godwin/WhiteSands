@@ -93,3 +93,64 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+#hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: max-content;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#hamburger-menu::before,
+#hamburger-menu::after,
+#hamburger-menu input {
+  content: "";
+  width: 30px;
+  height: 4px;
+  background-color: black;
+  border-radius: 99999px;
+  transform-origin: left center;
+  transition: opacity 400ms ease-in-out, width 400ms ease-in-out, rotate 400ms ease-in-out, translate 400ms ease-in-out, backgound-color 200ms ease-in-out;
+}
+
+#hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+#hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+}
+
+#hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+}
+
+#hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+#sidebar {
+  transition: translate 400ms ease-in-out;
+  translate: -100%;
+  position: fixed;
+  overflow-y: none;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+}
+
+#hamburger-menu:has(input:checked) + #sidebar {
+  translate: 0;
+  display: block;
+}
