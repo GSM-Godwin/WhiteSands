@@ -55,17 +55,17 @@ export const {
             }
             
             if (token.role && session.user) {
-                session.user.role = token.role as UserRole
+                session.user.role = token.role
             }
             
             if (session.user) {
-                session.user.isTwoFactorEnabled = token.isTwoFactorEnabled as boolean
+                session.user.isTwoFactorEnabled = token.isTwoFactorEnabled
             }
 
             if (session.user) {
                 session.user.name = token.name;
                 session.user.email = token.email;
-                session.user.isOauth = token.isOauth as boolean
+                session.user.isOauth = token.isOauth
             }
 
             return session
