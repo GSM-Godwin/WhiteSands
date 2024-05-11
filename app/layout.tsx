@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
-import { auth } from "@/auth";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { auth } from "@/auth";
 
 const roboto = Roboto({ weight: ["100","300","400","500","700","900"], subsets: ["latin"] });
 
