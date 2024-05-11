@@ -54,6 +54,9 @@ const SettingsPage = () => {
       email: user?.email || undefined,
       role: user?.role || undefined,
       isTwoFactorEnabled: user?.isTwoFactorEnabled || undefined,
+      phone: user?.phone || undefined,
+      address: user?.address || undefined,
+      post: user?.post || undefined,
     }
   })
 
@@ -163,6 +166,60 @@ const SettingsPage = () => {
                   />
                 </>
               )}
+              <FormField 
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone</FormLabel>
+                    <FormControl>
+                      <Input 
+                        {...field}
+                        placeholder="+123 4567890"
+                        disabled={isPending}
+                        type="tel"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField 
+                control={form.control}
+                name="address"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Address</FormLabel>
+                    <FormControl>
+                      <Input 
+                        {...field}
+                        placeholder="2, House Address, State, Country"
+                        disabled={isPending}
+                        type="text"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField 
+                control={form.control}
+                name="post"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Postal Address</FormLabel>
+                    <FormControl>
+                      <Input 
+                        {...field}
+                        placeholder="100034"
+                        disabled={isPending}
+                        type="number"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField 
                 control={form.control}
                 name="role"

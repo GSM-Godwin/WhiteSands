@@ -65,7 +65,10 @@ export const {
             if (session.user) {
                 session.user.name = token.name;
                 session.user.email = token.email;
-                session.user.isOauth = token.isOauth
+                session.user.isOauth = token.isOauth;
+                session.user.phone = token.phone;
+                session.user.address = token.address;
+                session.user.post = token.post
             }
 
             return session
@@ -85,7 +88,10 @@ export const {
             token.name = existingUser.name;
             token.email = existingUser.email;
             token.role = existingUser.role;
-            token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled
+            token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled,
+            token.phone = existingUser.phone;
+            token.address = existingUser.address;
+            token.post = existingUser.post
 
             return token
         }

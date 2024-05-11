@@ -14,9 +14,10 @@ interface UserInfoProps {
 export const UserInfo = ({
     user,
     label,
+    
 }: UserInfoProps) => {
     return (
-        <Card className="w-[600px] shadow-md">
+        <Card className="w-[600px] shadow-md">           
             <CardHeader>
                 <p className="text-2xl font-semibold text-center">
                     {label}
@@ -45,6 +46,30 @@ export const UserInfo = ({
                     </p>
                     <p className="truncate text-xs max-w-[180px] font-mono p-1 bg-slate-100 rounded-md">
                         {user?.email}
+                    </p>
+                </div>
+                <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+                    <p className="text-sm font-medium">
+                        Phone
+                    </p>
+                    <p className="truncate text-xs max-w-[180px] font-mono p-1 bg-slate-100 rounded-md">
+                        {user?.phone}
+                    </p>
+                </div>
+                <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+                    <p className="text-sm font-medium">
+                        Address
+                    </p>
+                    <p className="truncate text-xs max-w-[180px] font-mono p-1 bg-slate-100 rounded-md">
+                        {user?.address}
+                    </p>
+                </div>
+                <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+                    <p className="text-sm font-medium">
+                        Postal Address
+                    </p>
+                    <p className="truncate text-xs max-w-[180px] font-mono p-1 bg-slate-100 rounded-md">
+                        {user?.post}
                     </p>
                 </div>
                 <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">

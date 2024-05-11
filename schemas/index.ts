@@ -7,7 +7,10 @@ export const SettingsSchema = z.object({
     role: z.enum([UserRole.ADMIN, UserRole.USER]),
     email: z.optional(z.string().email()),
     password: z.optional(z.string().min(6)),
-    newPassword: z.optional(z.string().min(6))
+    newPassword: z.optional(z.string().min(6)),
+    address: z.optional(z.string()),
+    post: z.optional(z.string().min(4)),
+    phone: z.optional(z.string().min(4))
 })
     .refine((data) => {
         if (data.password && !data.newPassword) {

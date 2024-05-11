@@ -1,8 +1,6 @@
 datasource db {
   provider  = "postgresql"
   url  	    = env("DATABASE_URL")
-  // uncomment next line if you use Prisma <5.10
-  // directUrl = env("DATABASE_URL_UNPOOLED")
 }
 
 generator client {
@@ -25,6 +23,9 @@ model User {
   accounts      Account[]
   isTwoFactorEnabled  Boolean @default(false)
   twoFactorConfirmation TwoFactorConfirmation?
+  address       String?
+  post          String?
+  phone         String?
 }
 
 model Account {

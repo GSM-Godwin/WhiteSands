@@ -25,7 +25,7 @@ const Navbar = () => {
             <Image src={logo} width={100} alt='Whitesands Agency logo'/>
           </a>
         </div>
-        <div className='flex text-[30px] items-center justify-center gap-5'>
+        <div className='flex cursor-pointer text-[30px] items-center justify-center gap-5'>
           <LoginButton mode='modal' asChild>
             <FaUserCircle />
           </LoginButton>
