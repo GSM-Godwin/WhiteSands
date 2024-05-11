@@ -11,7 +11,7 @@ import { getVerificationTokenByToken } from "@/data/verification-token"
 import { sendVerificationEmail } from "@/lib/mail"
 
 export const settings = async (
-    values: z.infer<typeof SettingsSchema>
+    values
 ) => {
     const user = await currentUser()
 
