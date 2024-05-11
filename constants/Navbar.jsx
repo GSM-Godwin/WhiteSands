@@ -26,7 +26,7 @@ const Navbar = () => {
           </a>
         </div>
         <div className='flex text-[30px] items-center justify-center gap-5'>
-          <LoginButton>
+          <LoginButton asChild>
             <FaUserCircle />
           </LoginButton>
           <Button text="Get A Quote" bg="" />
