@@ -41,7 +41,9 @@ const About = () => {
           <p className='text-justify lg:text-[25px]'>The company combines its core products of Air Freight, Ocean Freight and logistics to deliver globally integrated, tailor-made end-to-end solutions for eleven core industries. Drawing on in-depth industry know-how and customized IT systems, Whitesands Agency manages the needs of its customers supply chains, no matter how demanding they might be.</p>
         </div>
       </section>
-      {/* <Sliders /> */}
+      <section className='md:mx-20 mx-10 my-10'>
+        <Sliders />
+      </section>
       <section className="w-full flex flex-wrap bg-[#FAFAFA] justify-evenly items-center gap-20 p-20" style={{ backgroundImage: `url(/assets/map-bg.png)`, backgroundRepeat: 'repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
         <div className="flex flex-col gap-2 max-w-[500px] p-5">
           <Image src={truck} alt="truck" />
