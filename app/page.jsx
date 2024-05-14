@@ -65,7 +65,7 @@ export default function Home() {
         </div>
       </section>
       <section className="lg:h-[215px] w-[100%] md:flex flex-wrap lg:items-center px-5 md:px-14 lg:px-14 justify-between mt-[90px] md:mt-[140px] lg:mt-[150px]">
-        <div className="flex flex-col md:flex-row gap-10 lg:gap-0">
+        <div className="flex flex-col lg:w-[70%] md:flex-row gap-10 lg:gap-0">
           <div className="flex items-center gap-5">
             <Image src={call} alt="call center"/>
             <div className="">
@@ -83,11 +83,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex px-5 md:px-0 lg:pl-10 lg:border-l-2 flex-col mt-10 lg:mt-0">
+        <div className="flex lg:w-[29%] px-5 md:px-0 lg:pl-5 lg:border-l-2 flex-col mt-10 lg:mt-0">
           <h3 className="text-[#000A3E] text-[23px] md:mb-3 font-medium">Track and Trace</h3>
           <div>
-            <form action="" className="flex flex-col md:flex-row md:items-center">
-              <input type="number" placeholder="123456" maxLength={50} className="border-2 h-[46px]" /> 
+            <form action="" className="flex flex-col md:items-start">
+              <input type="number" placeholder="123456" maxLength={50} className="border-2 h-[46px] w-full" /> 
               {/* <button onClick={() => {}} className="bg-[#FF3514] p-3 text-white">Track and Trace</button> */}
               <Button text="Track and Trace" bg="FF3514" />
             </form>
@@ -129,7 +129,7 @@ export default function Home() {
       <section className="lg:pt-10 px-10 lg:px-20 w-full flex flex-col items-center">
         <h1 className="lg:text-[50px] text-[40px] mt-10 font-medium pb-10">Our Services</h1>
         <div className="flex gap-5 flex-wrap w-[100%]">
-          <div className="w-full md:w-[48%] lg:w-[32%] h-[300px] flex bg-[#0000006f] flex-col justify-end" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
+          <div className="w-full md:w-[48%] lg:w-[31%] h-[300px] flex bg-[#0000006f] flex-col justify-end" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
             <div className="p-5">
               <h2 className="text-white text-[16px]">Automotive</h2>
               <Button text="Read More" bg="FF3514" />
@@ -214,13 +214,13 @@ export default function Home() {
           <div className="flex flex-col justify-center items-center" style={{ backgroundImage: `url(/assets/map-bg.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
             <h2 className="text-[35px] text-[#000A3E] mt-20 mb-10">Numbers speak for <span className="font-bold"> themselves</span></h2>
             <div className="flex flex-wrap justify-between gap-10 lg:gap-20">
-              <div className="flex flex-col md:w-[47%] gap-2 shadow-lg bg-white max-w-[500px] p-5">
+              <div className="flex flex-col md:w-[47%] lg:w-[45%] gap-2 shadow-lg bg-white max-w-[500px] p-5">
                 <Image src={truck} alt="truck" />
                 <span className="text-[#FF3514] text-[35px]">1,408m</span>
                 <h5 className="font-medium text-[20px] text-[#000A3E]">Delivered Packages</h5>
                 <p className="text-[12px] text-[#242424]">We strongly support best practice sharing across our operations around the world and across various industrial sectors.</p>
               </div>
-              <div className="flex flex-col md:w-[47%] gap-2 shadow-lg bg-white max-w-[500px] p-5">
+              <div className="flex flex-col md:w-[47%] lg:w-[45%] gap-2 shadow-lg bg-white max-w-[500px] p-5">
                 <Image src={countries} alt="counties" />
                 <span className="text-[#FF3514] text-[35px]">57</span>
                 <h5 className="font-medium text-[20px] text-[#000A3E]">Countries Covered</h5>
@@ -228,13 +228,13 @@ export default function Home() {
                   As one of the world’s leading supply chain management companies, we design and implement industry-leading solutions.
                 </p>
               </div>
-              <div className="flex flex-col md:w-[47%] gap-2 shadow-lg bg-white max-w-[500px] p-5">
+              <div className="flex flex-col md:w-[47%] lg:w-[45%] gap-2 shadow-lg bg-white max-w-[500px] p-5">
                 <Image src={clients} alt="clients" />
                 <span className="text-[#FF3514] text-[35px]">784</span>
                 <h5 className="font-medium text-[20px] text-[#000A3E]">Satisfied Clients</h5>
                 <p className="text-[12px] text-[#242424]">Whitesands applies its renowned operational expertise to provide best-in-class services across its integrated worldwide network.</p>
               </div>
-              <div className="flex flex-col md:w-[47%] gap-2 shadow-lg bg-white max-w-[500px] p-5">
+              <div className="flex flex-col md:w-[47%] lg:w-[45%] gap-2 shadow-lg bg-white max-w-[500px] p-5">
                 <Image src={goods} alt="goods" />
                 <span className="text-[#FF3514] text-[35px]">4,500m</span>
                 <h5 className="font-medium text-[20px] text-[#000A3E]">Tons of Goods</h5>

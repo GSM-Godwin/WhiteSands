@@ -54,7 +54,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="w-[100%] h-full bg-white lg:text-[18px] font-light flex items-center justify-center py-2">
+      <div className="w-[100%] h-full bg-white text-[12px] lg:text-[18px] font-light flex items-center justify-center py-2">
         Copyright C 2024, Whitesands Agency
       </div>
     </>

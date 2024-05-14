@@ -1,12 +1,6 @@
-import { Poppins } from "next/font/google";
+import Image from "next/image";
 
-import { cn } from "@/lib/utils";
-
-const font = Poppins({
-    subsets: ["latin"],
-    weight: ["600"]
-})
-
+import logo from "@/public/assets/logo.png"
 interface HeaderProps {
     label: string;
 }
@@ -16,12 +10,7 @@ export const Header = ({
 }: HeaderProps) => {
     return (
         <div className="w-full flex flex-col gap-y-4 items-center justify-center">
-            <h1 className={cn(
-                "text-3xl font-semibold",
-                font.className
-            )}>
-                🔐Auth
-            </h1>
+            <Image src={logo} alt="logo" width={80} className="my-[-15px]" />
             <p className="text-muted-foreground text-sm'">
                 {label}
             </p>

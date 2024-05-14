@@ -22,27 +22,27 @@ const About = () => {
     <main className='bg-white'>
       <Navbar />
       <Hero headingText="About us" backgroundImage="/assets/about-hero.png" />
-      <section className='h-[100vh] flex lg:mx-20 lg:mt-12 md:mx-8 mx-5'>
-        <div className='lg:flex-2 lg:flex border-red-500 '>
+      <section className='flex flex-col md:flex-row mx-5 m-10 md:mx-20 gap-5'>
+        <div className='md:w-[50%] lg:flex-2 hidden md:flex border-red-500 '>
           <Image src={about} className='bg-cover w-full lg:w-[736px] lg:h-[538px]'  />
         </div>
-        <div className='flex flex-col flex-1 items-start justify-center lg:ml-20 lg:mr-10'>
+        <div className='flex flex-col md:flex-1 items-start justify-center'>
           <h1 className='text-[50px] text-[#000A3E]'>About <span className='font-bold'>Us</span></h1>
           <div className='flex w-[102px] bg-[#FF3514] h-1 mt-2 mb-8' />
           <p className='text-[18px]'>Whitesands Agency is a global leading logistics provider that provides innovative suply chain solutions for a multitude of industries worldwide.</p>
           <Button text="View More" bg="FF3514" />
         </div>
       </section>
-      <section className='flex lg:mx-20 md:mx-8 mx-5 gap-16 py-10 text-[#000A3E]'>
+      <section className='flex flex-col md:flex-row md:mx-20 mx-10 lg:gap-16 gap-10 py-10 text-[#000A3E]'>
         <div className='flex flex-1'>
-          <h2 className='font-semibold leading-[60px] text-[45px]'>The Whitesands Agency is one of the world&apos;s leading providers of Logistics solutions.</h2>
+          <h2 className='font-semibold lg:leading-[60px] text-[30px] lg:text-[45px]'>The Whitesands Agency is one of the world&apos;s leading providers of Logistics solutions.</h2>
         </div>
         <div className='flex flex-1'>
-          <p className='text-justify text-[25px]'>The company combines its core products of Air Freight, Ocean Freight and logistics to deliver globally integrated, tailor-made end-to-end solutions for eleven core industries. Drawing on in-depth industry know-how and customized IT systems, Whitesands Agency manages the needs of its customers supply chains, no matter how demanding they might be.</p>
+          <p className='text-justify lg:text-[25px]'>The company combines its core products of Air Freight, Ocean Freight and logistics to deliver globally integrated, tailor-made end-to-end solutions for eleven core industries. Drawing on in-depth industry know-how and customized IT systems, Whitesands Agency manages the needs of its customers supply chains, no matter how demanding they might be.</p>
         </div>
       </section>
       {/* <Sliders /> */}
-      <section className="w-full flex bg-[#FAFAFA] justify-evenly items-center gap-20 p-20" style={{ backgroundImage: `url(/assets/map-bg.png)`, backgroundRepeat: 'repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
+      <section className="w-full flex flex-wrap bg-[#FAFAFA] justify-evenly items-center gap-20 p-20" style={{ backgroundImage: `url(/assets/map-bg.png)`, backgroundRepeat: 'repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
         <div className="flex flex-col gap-2 max-w-[500px] p-5">
           <Image src={truck} alt="truck" />
           <span className="text-[#FF3514] text-[35px]">1,408m</span>
@@ -103,7 +103,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className='p-20 flex bg-white w-full justify-evenly'>
+      <section className='p-20 flex flex-wrap bg-white w-full justify-evenly gap-5'>
         <div className='flex justify-end items-end w-[200px] h-[230px] mb-5 pb-5 border-black' style={{ backgroundImage: `url(/assets/1.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'top' }}>
           <div className='flex flex-col text-center bg-transparent'>
             <p className='text-[#FF3514] text-[20px] font-medium flex m-auto py-2'>Mission</p>
@@ -112,21 +112,20 @@ const About = () => {
         </div>
         <div className='flex justify-end items-end w-[200px] h-[230px] mb-5 pb-5 border-black' style={{ backgroundImage: `url(/assets/2.1.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'top' }}>
           <div className='flex flex-col text-center bg-transparent'>
-            <p className='text-[#FF3514] text-[20px] font-medium flex m-auto py-2'>Mission</p>
+            <p className='text-[#FF3514] text-[20px] font-medium flex m-auto py-2'>Vision</p>
             <p className='text-[12px] text-[#000A3E] font-light'>As one of the world’s leading supply chain management companies, we design and implement industry-leading solutions.</p>
           </div>
         </div>
         <div className='flex justify-end items-end w-[200px] h-[230px] mb-5 pb-5 border-black' style={{ backgroundImage: `url(/assets/3.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'top' }}>
           <div className='flex flex-col text-center bg-transparent'>
-            <p className='text-[#FF3514] text-[20px] font-medium flex m-auto py-2'>Mission</p>
+            <p className='text-[#FF3514] text-[20px] font-medium flex m-auto py-2'>Value</p>
             <p className='text-[12px] text-[#000A3E] font-light'>As one of the world’s leading supply chain management companies, we design and implement industry-leading solutions.</p>
           </div>
         </div>
-
       </section>
-      <section className='p-20 flex bg-[#F2F2F2] items-center'>
-        <div className='bg-white p-10 w-[50%] h-max py-20'>
-          <h1 className='text-[50px] text-[#000A3E] leading-[60px]'>Ethics <span className='font-bold'>& <br />Compliance</span></h1>
+      <section className='p-10 md:p-20 flex md:flex-row flex-col-reverse bg-[#F2F2F2] items-center'>
+        <div className='bg-white p-10 w-full lg:w-[50%] h-max'>
+          <h1 className='lg:text-[50px] text-[30px] text-[#000A3E] lg:leading-[60px]'>Ethics <span className='font-bold'>& <br />Compliance</span></h1>
           <div className='flex w-[102px] bg-[#FF3514] h-1 mt-4 mb-8' />
           <p>At Whitesands we make a commitment to pursue our business with integrity, respecting different cultures and the dignity and rights of individuals in all countries. We support the principles outlined in the UN Universal Declaration of Human Rights and commit ourselves to the observance of fundamental labor and environmental standards.</p>
         </div>
@@ -134,21 +133,21 @@ const About = () => {
           <Image src={expertise} />
         </div>
       </section>
-      <section className='flex pl-20'>
-        <div className='flex flex-col flex-1 py-10 pr-10'>
-          <h1 className='text-[50px] text-[#000A3E] leading-[60px]'>First things <span className='font-bold'>first</span></h1>
+      <section className='flex md:flex-row flex-col px-10 md:pl-20'>
+        <div className='flex flex-col md:flex-1 py-10 md:pr-10'>
+          <h1 className='lg:text-[50px] text-[30px] text-[#000A3E] lg:leading-[60px]'>First things <span className='font-bold'>first</span></h1>
           <div className='flex w-[102px] bg-[#FF3514] h-1 mt-4 mb-8' />
           <p>All the aspects of our work processes, organization and operations are oriented towards our customers’ needs.</p>
-          <form action="" className='w-full'>
-              <div className='flex justify-between pb-6'>
-                <input type='text' name='first-name' placeholder='First Name' className='border border-red-500 w-[47%] p-2 font-medium' />
-                <input type='text' name='last-name' placeholder='Last Name' className='border border-red-500 w-[47%] p-2 font-medium' />
+          <form action="" className='w-full flex flex-col pt-8'>
+              <div className='flex md:flex-row flex-col w-full gap-5 md:justify-between pb-6'>
+                <input type='text' name='first-name' placeholder='First Name' className='border border-red-500 md:w-[47%] p-2 font-medium' />
+                <input type='text' name='last-name' placeholder='Last Name' className='border border-red-500 md:w-[47%] p-2 font-medium' />
               </div>
-              <div className='flex justify-between pb-6'>
-                <input type='email' name='email' placeholder='Email address' className='border border-red-500 w-[47%] p-2 font-medium' />
-                <input type='tel' name='tel' placeholder='Phone number' className='border border-red-500 w-[47%] p-2 font-medium' />
+              <div className='flex md:flex-row flex-col w-full gap-5 md:justify-between pb-6'>
+                <input type='email' name='email' placeholder='Email address' className='border border-red-500 md:w-[47%] p-2 font-medium' />
+                <input type='tel' name='tel' placeholder='Phone number' className='border border-red-500 md:w-[47%] p-2 font-medium' />
               </div>
-              <div className='flex w-[100%] pb-6 pt-3'>
+              <div className='flex md:w-[100%] pb-6 pt-3'>
                 <textarea name="message" id="message" placeholder='Tell us your thought' className='border border-red-500 w-full p-2 font-medium' ></textarea>
               </div>
               <div className='flex w-full justify-center'>
@@ -156,7 +155,7 @@ const About = () => {
               </div>
             </form>
         </div>
-        <div className='flex flex-1'>
+        <div className='flex md:flex-1'>
           <Image src={seaport} />
         </div>
       </section>

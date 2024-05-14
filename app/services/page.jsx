@@ -13,47 +13,47 @@ const Services = () => {
     <main>
       <Navbar />
       <Hero headingText="Our Services" backgroundImage="/assets/hero.png" />
-      <section className="p-20 flex flex-wrap gap-5 items-center justify-between">
-          <div className="flex flex-grow-1 w-[345px] h-[300px] bg-[#0000006f] flex-col justify-end" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
-            <div className="p-5">
-              <h2 className="text-white">Automotive</h2>
-              <Button text="Read More" bg="FF3514" />
-            </div>
+      <section className="p-10 lg:p-20 w-full gap-5 flex flex-wrap items-center">
+        <div className="w-full md:w-[48%] lg:w-[31%] h-[300px] flex bg-[#0000006f] flex-col justify-end" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
+          <div className="p-5">
+            <h2 className="text-white text-[16px]">Automotive</h2>
+            <Button text="Read More" bg="FF3514" />
           </div>
-          <div className="flex-grow-1 w-[345px] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
-            <div className="p-5">
-              <h2 className="text-white">Chemicals</h2>
-              <Button text="Read More" bg="FF3514" />
-            </div>
+        </div>
+        <div className="w-full md:w-[48%] lg:w-[32%] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
+          <div className="p-5">
+            <h2 className="text-white text-[16px]">Chemicals</h2>
+            <Button text="Read More" bg="FF3514" />
           </div>
-          <div className="flex-grow-1 w-[345px] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
-            <div className="p-5">
-              <h2 className="text-white">Delivery</h2>
-              <Button text="Read More" bg="FF3514" />
-            </div>
+        </div>
+        <div className="w-full md:w-[48%] lg:w-[32%] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
+          <div className="p-5">
+            <h2 className="text-white text-[16px]">Delivery</h2>
+            <Button text="Read More" bg="FF3514" />
           </div>
-          <div className="flex-grow-1 w-[345px] h-[300px] flex bg-[#0000006f] flex-col justify-end" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
-            <div className="p-5">
-              <h2 className="text-white">Automotive</h2>
-              <Button text="Read More" bg="FF3514" />
-            </div>
+        </div>
+        <div className="w-full md:w-[48%] lg:w-[31%] h-[300px] flex bg-[#0000006f] flex-col justify-end" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
+          <div className="p-5">
+            <h2 className="text-white text-[16px]">Automotive</h2>
+            <Button text="Read More" bg="FF3514" />
           </div>
-          <div className="flex-grow-1 w-[345px] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
-            <div className="p-5">
-              <h2 className="text-white">Chemicals</h2>
-              <Button text="Read More" bg="FF3514" />
-            </div>
+        </div>
+        <div className="w-full md:w-[48%] lg:w-[32%] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
+          <div className="p-5">
+            <h2 className="text-white text-[16px]">Chemicals</h2>
+            <Button text="Read More" bg="FF3514" />
           </div>
-          <div className="flex-grow-1 w-[345px] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
-            <div className="p-5">
-              <h2 className="text-white">Delivery</h2>
-              <Button text="Read More" bg="FF3514" />
-            </div>
+        </div>
+        <div className="w-full md:w-[48%] lg:w-[32%] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
+          <div className="p-5">
+            <h2 className="text-white text-[16px]">Delivery</h2>
+            <Button text="Read More" bg="FF3514" />
           </div>
+        </div>
       </section>
       <section className='flex'>
-        <div className='flex flex-col flex-1 p-20'>
-          <h1 className='text-[50px] text-[#000A3E] leading-[60px]'>Dream Big <br />
+        <div className='flex flex-col flex-1 p-10 md:p-20'>
+          <h1 className='text-[30px] lg:text-[50px] text-[#000A3E] lg:leading-[60px]'>Dream Big <br />
             <span className='font-bold'>Inspire the World</span>
           </h1>
           <p className='text-[20px] text-[#242424] mt-6'>When it comes to our customers, carriers, and business partners, Whitesands believes in setting proper expectations of what we provide.</p>
@@ -62,12 +62,12 @@ const Services = () => {
           <p className='text-[20px] text-[#242424] mt-3'><span className='mr-5 font-semibold'>◎</span>Process Improvement</p>
           <p className='text-[20px] text-[#242424] mt-3'><span className='mr-5 font-semibold'>◎</span>Long-Lasting Relationships</p>
         </div>
-        <div className='flex flex-1 bg-[#D0E0FF]'></div>
+        <div className='hidden md:flex flex-1 bg-[#D0E0FF]'></div>
       </section>
-      <section className='relative flex h-screen items-start'>
+      <section className='relative flex items-start'>
         <Image src={bg} />
-        <div className='flex absolute bottom-0 left-20 bg-[#000A3E] w-[60%]'>
-          <p className='text-white text-[50px] ml-10 mr-20 mt-16 mb-12'>The Best <span className='font-bold'>Logistics Company</span></p>
+        <div className='flex absolute bottom-0 left-20 bg-[#000A3E] md:w-[60%]'>
+          <p className='text-white md:text-[25px] lg:text-[50px] m-5 md:ml-10 md:mr-20 md:mt-16 md:mb-12'>The Best <span className='font-bold'>Logistics Company</span></p>
         </div>
       </section>
       <Reachout />
