@@ -55,7 +55,7 @@ const menuItems = [
   }
 ]
 
-const sidebar = () => {
+const Sidebar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.user}>
@@ -85,4 +85,4 @@ const sidebar = () => {
   )
 }
 
-export default sidebar
+export default Sidebar
