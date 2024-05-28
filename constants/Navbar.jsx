@@ -5,12 +5,14 @@ import { usePathname } from 'next/navigation';
 import { FaUserCircle } from 'react-icons/fa';
 import { FaSearch } from 'react-icons/fa';
 import { LoginButton } from "@/components/auth/login-button";
+import { useCurrentUser } from '@/hooks/use-current-user';
 
 import logo from "@/public/assets/footer-logo.jpg"
 import Image from 'next/image';
 import Button from '@/components/frontend/Button';
 
 const Navbar = () => {
+  const user = useCurrentUser()
   return (
     <section>
       <div className='flex justify-between w-full border-b-[1.5px] border-gray-300 px-10 md:px-20'>
@@ -20,10 +22,16 @@ const Navbar = () => {
           </a>
         </div>
         <div className='hidden md:flex cursor-pointer text-[30px] items-center justify-center gap-5'>
-          <LoginButton mode='modal' asChild>
-            <FaUserCircle />
-          </LoginButton>
-          <Button text="Get A Quote" bg="" />
+          {user ? 
+            <a href='/server'>
+              <FaUserCircle />
+            </a> :
+            <LoginButton mode='modal' asChild>
+              <FaUserCircle />
+            </LoginButton>
+          }
+          
+          <Button text="Get A Quote" bg="" href="/contact" />
         </div>
       </div>
       <nav className="bg-white py-2 hidden md:flex justify-between px-10">
@@ -33,6 +41,7 @@ const Navbar = () => {
             <NavItem href="/about" label="About Us" />
             <NavItem href="/services" label="Services" />
             <NavItem href="/contact" label="Contact Us" />
+            <NavItem href="/booking" label="Book Now" />
           </div>
         </div>
         <div className='flex items-center justify-center'>
@@ -48,7 +57,7 @@ const Navbar = () => {
             <LoginButton asChild>
               <FaUserCircle />
             </LoginButton>
-            <Button text="Get A Quote" bg="" />
+            <Button text="Get A Quote" bg="" href="/contact" />
           </div>
           <nav className="bg-white py-2 flex flex-col justify-between px-10">
             <div>
@@ -57,6 +66,7 @@ const Navbar = () => {
                 <NavItem href="/about" label="About Us" />
                 <NavItem href="/services" label="Services" />
                 <NavItem href="/contact" label="Contact Us" />
+                <NavItem href="/booking" label="Book Now" />
               </div>
             </div>
             <div className='flex items-center justify-center'>
