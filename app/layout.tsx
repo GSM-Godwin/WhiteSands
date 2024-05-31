@@ -4,7 +4,7 @@ import { SessionProvider } from "next-auth/react";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { auth } from "@/auth";
-import { useEffect } from "react";
+import Head from "next/head";
 
 const roboto = Roboto({ weight: ["100","300","400","500","700","900"], subsets: ["latin"] });
 
@@ -17,27 +17,16 @@ export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-})  {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&region=fr&libraries=places,geometry`;
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []); 
-  
+}) {
   const session = await auth();
 
   return (
     <SessionProvider session={session}>
       <html lang="en">
         <head>
-            <script async src={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&region=fr&libraries=places,geometry`}></script>
+          <script async src={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&region=fr&libraries=places,geometry`}></script>
         </head>
-        <body className={roboto.className}>
+        <body className={roboto.className}> 
           <Toaster />
           {children}
         </body>
