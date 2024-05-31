@@ -25,7 +25,7 @@ export default async function RootLayout({
         <body className={roboto.className}>
           <Toaster />
           {children}
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCL6fMXy4J0P7Dh7k2JaZcKlg5yAkpBww&region=fr&libraries=places,geometry"></script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&region=fr&libraries=places,geometry"></script>
         </body>
       </html>
     </SessionProvider>
