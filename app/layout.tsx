@@ -24,7 +24,7 @@ export default async function RootLayout({
     <SessionProvider session={session}>
       <html lang="en">
         <head>
-          <script async src={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&region=fr&libraries=places,geometry`}></script>
+          <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCL6fMXy4J0P7Dh7k2JaZcKlg5yAkpBww&region=fr&libraries=places,geometry"></script>
         </head>
         <body className={roboto.className}> 
           <Toaster />
