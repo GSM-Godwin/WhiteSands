@@ -7,6 +7,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
+enum YesNo {
+  YES
+  NO
+}
+
 enum UserRole {
   ADMIN
   USER
@@ -26,6 +31,7 @@ model User {
   address       String?
   post          String?
   phone         String?
+  transactions  Transaction[]
 }
 
 model Account {
@@ -81,4 +87,27 @@ model TwoFactorConfirmation {
   userId  String
   user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@unique([userId])
+}
+
+model Transaction {
+  id                String   @id @default(cuid())
+  name              String
+  userId            String
+  weight            String
+  height            String
+  length            String
+  width             String
+  pickupLocation    String
+  dropoffLocation   String
+  dangerousGoods    YesNo
+  liveAnimals       YesNo
+  humanRemains      YesNo
+  seaFreight        YesNo
+  price             String
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }

@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState, useRef, useEffect } from "react";
 import { useCurrentUser } from "@/hooks/use-current-user";
+import { transactions } from "@/actions/transactions"
 
 const calculateShippingCost = ({
     weight,
@@ -100,6 +101,7 @@ const BookingPage = () => {
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
     const [phone, setPhone] = useState(user.phone);
+    const [id, setId] = useState(user.id);
     const [isDangerousGoods, setIsDangerousGoods] = useState(false);
     const [isLiveAnimals, setIsLiveAnimals] = useState(false);
     const [isHumanRemains, setIsHumanRemains] = useState(false);
@@ -129,6 +131,9 @@ const BookingPage = () => {
                 break;
             case 'name':
                 setName(value);
+                break;
+            case 'id':
+                setId(value);
                 break;
             case 'email':
                 setEmail(value);
@@ -174,6 +179,7 @@ const BookingPage = () => {
             length,
             width,
             name,
+            id,
             email,
             phone,
             totalCost: cost === 'To be determined' ? cost : `$${cost}`,
@@ -280,6 +286,10 @@ const BookingPage = () => {
                             <label className="hidden flex-col text-[12px]">
                                 Name:
                                 <input type='text' value={name} readOnly onChange={handleInputChange} id="name" name="name" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" />
+                            </label>
+                            <label className="hidden flex-col text-[12px]">
+                                ID:
+                                <input type='text' value={id} readOnly onChange={handleInputChange} id="id" name="id" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" />
                             </label>
                             <label className="hidden flex-col text-[12px]">
                                 Email:
