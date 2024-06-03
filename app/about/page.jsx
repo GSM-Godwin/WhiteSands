@@ -162,7 +162,7 @@ const About = () => {
         <div className='flex justify-end items-start w-[200px] h-[230px] mb-5 pb-5 border-black' style={{ backgroundImage: `url(/assets/2.1.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'top' }}>
           <div className='flex flex-col text-center bg-transparent'>
             <p className='text-[#FF3514] text-[20px] font-medium flex m-auto py-2'>Vision</p>
-            <p className='text-[12px] text-[#000A3E] font-medium '>Our vision is to be the premier logistics partner in the Cayman Islands and beyond, recognized for our innovative solutions, operational excellence, and unwavering commitment to our clients' success. We aim to set the standard for the industry through continuous improvement and strategic growth.</p>
+            <p className='text-[12px] text-[#000A3E] font-medium '>Our vision is to be the premier logistics partner in the Cayman Islands and beyond, recognized for our innovative solutions, operational excellence, and unwavering commitment to our clients success. We aim to set the standard for the industry through continuous improvement and strategic growth.</p>
           </div>
         </div>
         <div className='flex items-start justify-center w-[200px] h-[230px] mb-5 pb-5' style={{ backgroundImage: `url(/assets/3.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'top' }}>
