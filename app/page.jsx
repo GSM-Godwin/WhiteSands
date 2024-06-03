@@ -117,12 +117,12 @@ export default function Home() {
         <div className="flex-1 md:flex">
           <div className="w-60 h-60 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] rounded-full flex relative " style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="flex flex-col absolute top-0 shadow-lg w-28 h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full bg-white border-gray-500 items-center justify-center">
-              <div className="flex flex-col w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full border-black border-dashed border-[2px] items-center justify-center">
+              <div className="flex flex-col w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full border-[#FF3514] border-dashed border-[2px] items-center justify-center">
                 <span className="text-[#FF3514] text-[12px] md:text-[16px]">TRUSTED BY</span>
                 <p className="text-[12px] md:text-[16px]">6,526</p>
               </div>
             </div>
-            <div className="bg-[#FF3514] w-28 h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full flex absolute bottom-0 right-0"/>
+            <div className="bg-[#FF3514] w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-full flex absolute bottom-0 right-0" />
           </div>
         </div>
         <div className="flex flex-col flex-1">
