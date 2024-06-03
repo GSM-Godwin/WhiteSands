@@ -5,35 +5,20 @@ import 'react-multi-carousel/lib/styles.css';
 
 const data = [
     {
-        name: `Melbourne`,
+        name: `Caribbean`,
         img: `/assets/snow-truck.svg`,
         id: `1`
     },
     {
-        name: `Melbourne`,
+        name: `USA`,
         img: `/assets/snow-truck.svg`,
         id: `2`
     },
     {
-        name: `Melbourne`,
+        name: `Cayman Islands`,
         img: `/assets/snow-truck.svg`,
         id: `3`
     },
-    {
-        name: `Melbourne`,
-        img: `/assets/snow-truck.svg`,
-        id: `4`
-    },
-    {
-        name: `Melbourne`,
-        img: `/assets/snow-truck.svg`,
-        id: '5'
-    },
-    {
-        name: `Melbourne`,
-        img: `/assets/snow-truck.svg`,
-        id: `6`
-    },   
 ]
 
 export default function Sliders () {
@@ -61,13 +46,13 @@ export default function Sliders () {
     <div>
         <Carousel responsive={responsive} showDots={true} autoPlay={true} autoPlaySpeed={3000} dotListClass="" infinite={true}>
             <div className='lg:text-[45px] text-[28px] text-white font-medium mx-5 items-center flex justify-center h-[200px] border' style={{ backgroundImage: `url(/assets/snow-truck.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                Melbourne
+                Caribbean
             </div>
             <div className='lg:text-[45px] text-[28px] text-white font-medium mx-5 items-center flex justify-center h-[200px] border' style={{ backgroundImage: `url(/assets/snow-truck.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                Melbourne
+                USA
             </div>
             <div className='lg:text-[45px] text-[28px] text-white font-medium mx-5 items-center flex justify-center h-[200px] border' style={{ backgroundImage: `url(/assets/snow-truck.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                Melbourne
+                Cayman Islands
             </div>
             <div className='lg:text-[45px] text-[28px] text-white font-medium mx-5 items-center flex justify-center h-[200px] border' style={{ backgroundImage: `url(/assets/snow-truck.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 Melbourne

@@ -24,29 +24,30 @@ const Navbar = () => {
         <div className='hidden md:flex cursor-pointer text-[30px] items-center justify-center gap-5'>
           {user ? 
             <a href='/server'>
-              <FaUserCircle />
+              {user.image}
             </a> :
             <LoginButton mode='modal' asChild>
               <FaUserCircle />
             </LoginButton>
           }
-          
-          <Button text="Get A Quote" bg="" href="/contact" />
+          <a href="/contact">
+            <Button text="Get A Quote" bg="" />
+          </a>
         </div>
       </div>
-      <nav className="bg-white py-2 hidden md:flex justify-between px-10">
-        <div>
+      <nav className="bg-white py-2 hidden md:flex justify-around px-10">
+        <div className='flex items-baseline space-x-4'>
           <div className="flex items-baseline space-x-4">
             <NavItem href="/" label="Home" />
             <NavItem href="/about" label="About Us" />
             <NavItem href="/services" label="Services" />
             <NavItem href="/contact" label="Contact Us" />
-            <NavItem href="/booking" label="Book Now" />
           </div>
+          <a href="/booking" className='bg-orange-500 p-2 text-white'>Book Now</a>
         </div>
-        <div className='flex items-center justify-center'>
+        {/* <div className='flex items-center justify-center'>
           <FaSearch />
-        </div>
+        </div> */}
       </nav>
       <nav className='md:hidden'>
         <label id='hamburger-menu' className='mt-5 mr-10' >
@@ -54,24 +55,29 @@ const Navbar = () => {
         </label>
         <aside id='sidebar' className='py-5 hidden'>
           <div className='flex flex-col cursor-pointer text-[30px] items-center justify-center gap-5'>
-            <LoginButton asChild>
+          {user ? 
+            <a href='/server'>
+              {user.image}
+            </a> :
+            <LoginButton mode='modal' asChild>
               <FaUserCircle />
             </LoginButton>
+          }
             <Button text="Get A Quote" bg="" href="/contact" />
           </div>
           <nav className="bg-white py-2 flex flex-col justify-between px-10">
-            <div>
+            <div className='flex flex-col justify-center items-center'>
               <div className="flex flex-col items-center space-x-4">
                 <NavItem href="/" label="Home" />
                 <NavItem href="/about" label="About Us" />
                 <NavItem href="/services" label="Services" />
                 <NavItem href="/contact" label="Contact Us" />
-                <NavItem href="/booking" label="Book Now" />
               </div>
+              <a href="/booking" className='bg-orange-500 p-2 text-white'>Book Now</a>
             </div>
-            <div className='flex items-center justify-center'>
+            {/* <div className='flex items-center justify-center'>
               <FaSearch />
-            </div>
+            </div> */}
           </nav>
         </aside>
       </nav>

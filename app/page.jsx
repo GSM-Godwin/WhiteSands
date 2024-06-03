@@ -23,6 +23,8 @@ import countries from "@/public/assets/countries-svg.png"
 import mono from "@/public/assets/Mono.png"
 import techbrand from "@/public/assets/Techbrand.png"
 import wolves from "@/public/assets/Wolves.png"
+import woodvine from "@/public/assets/woodvine.jpg"
+import Link from "next/link";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -37,18 +39,33 @@ export default function Home() {
 
   const faqData = [
     {
-      title: "Few reasons why you should choose us",
-      desc: "Suspendisse finibus urna mauris, vitae consequat quam vel. Vestibulum leo ligula, vitae commodo nisl."
+      title: "What services does your freight forwarding and transportation company offer?",
+      desc: `We provide a comprehensive range of logistics services including:<br />
+        <ul>
+          <li><span class="font-bold">Freight Forwarding:</span> Coordinating the shipment of goods via air, sea, and land to ensure timely and efficient delivery.</li>
+          <li><span class="font-bold">Customs Brokerage:</span> Handling all customs clearance processes to facilitate smooth import and export operations.</li>
+          <li><span class="font-bold">Transportation:</span> Providing reliable transportation options for local and international shipments, including trucking and cargo handling.</li>
+        </ul>`
     },
     {
-      title: "Few reasons why you should choose us",
-      desc: "Suspendisse finibus urna mauris, vitae consequat quam vel. Vestibulum leo ligula, vitae commodo nisl."
+      title: "How do you ensure the safety and security of my shipments?",
+      desc: `At Whitesands Agency, we prioritize the safety and security of your shipments through:<br />
+        <ul>
+          <li><span class="font-bold">State-of-the-Art Tracking Systems:</span> Utilizing advanced technology to monitor and track your shipments in real-time.</li>
+          <li><span class="font-bold">Professional Handling:</span> Employing experienced staff trained in best practices for handling and transporting goods.</li>
+        </ul>`
     },
     {
-      title: "Few reasons why you should choose us",
-      desc: "Suspendisse finibus urna mauris, vitae consequat quam vel. Vestibulum leo ligula, vitae commodo nisl."
-    },
-  ]
+      title: "Can you assist with the customs clearance process?",
+      desc: `Yes, we can! Our dedicated customs brokerage team is well-versed in trade regulations and procedures. We offer:<br />
+        <ul>
+          <li><span class="font-bold">Documentation Preparation:</span> Assisting with the preparation and submission of all necessary customs documents.</li>
+          <li><span class="font-bold">Regulatory Compliance:</span> Ensuring your shipments comply with all relevant customs regulations and requirements.</li>
+          <li><span class="font-bold">Expedited Clearance:</span> Facilitating the swift clearance of goods to minimize delays and ensure timely delivery.</li>
+        </ul>`
+    }
+  ];
+  
 
   return (
     <main>
@@ -57,7 +74,7 @@ export default function Home() {
         <div className="p-5 flex h-[380px] md:h-[410px] lg:h-[500px] w-[100%] bg-[#000A3E]">
           <div className="w-[100%] h-[100%] flex flex-col mt-10 lg:mt-16">
             <h1 className="text-white text-center font-[700] text-[40px] md:text-[50px] lg:text-[70px] leading-[60px] md:leading-[82.03px]">WHITESANDS <span className="text-[#FF3514]">AGENCY</span></h1>
-            <p className="text-white text-center font-[400] text-[13px] leading-[15.74px]">Whitesands Agency is a global leading logistics provider that provides innovative supply chain <br /> solutions for a multitude of industries worldwide.</p>
+            <p className="text-white text-center font-[400] text-[13px] leading-[15.74px]">Whitesands Agency is a global leading logistics provider that provides innovative <br /> solutions for a multitude of industries worldwide.</p>
           </div>
         </div>
         <div className="absolute top-[300px] md:top-[230px] lg:top-[260px] w-[100%] flex justify-center">
@@ -66,20 +83,20 @@ export default function Home() {
       </section>
       <section className="lg:h-[215px] w-[100%] md:flex flex-wrap lg:items-center px-5 md:px-14 lg:px-14 justify-between mt-[90px] md:mt-[140px] lg:mt-[150px]">
         <div className="flex flex-col lg:w-[70%] md:flex-row gap-10 lg:gap-0">
-          <div className="flex items-center gap-5">
+          {/* <div className="flex items-center gap-5">
             <Image src={call} alt="call center"/>
             <div className="">
               <h3 className="text-[#000A3E] text-[23px] mb-3 font-medium">Call Center</h3>
               <p className="text-[#000A3E] text-20px">24/7 Support</p>
               <p className="text-[#000A3E] text-20px">+ (123) 1800-567-8990</p>
             </div>
-          </div>
+          </div> */}
           <div className="flex items-center gap-5">
             <Image src={map} alt="map" width={150}/>
             <div className="">
               <h3 className="text-[#000A3E] text-[23px] mb-3 font-medium">Location</h3>
-              <p className="text-[#000A3E] text-20px">USA, New York - 1060</p>
-              <p className="text-[#000A3E] text-20px">Str. First Avenue 1</p>
+              <p className="text-[#000A3E] text-20px">201 Owen Roberst Drive,</p>
+              <p className="text-[#000A3E] text-20px">Grand Cayman</p>
             </div>
           </div>
         </div>
@@ -89,40 +106,44 @@ export default function Home() {
             <form action="" className="flex flex-col md:items-start">
               <input type="number" placeholder="123456" maxLength={50} className="border-2 h-[46px] w-full" /> 
               {/* <button onClick={() => {}} className="bg-[#FF3514] p-3 text-white">Track and Trace</button> */}
-              <Button text="Track and Trace" bg="FF3514" />
+              <Link href="">
+                <Button text="Track and Trace" bg="FF3514" />
+              </Link>
             </form>
           </div>
         </div>
       </section>
       <section className="flex flex-col-reverse md:flex-row w-[100%] lg:px-20 px-10 mt-20 lg:mt-10">
         <div className="flex-1 md:flex">
-          <div className="w-60 h-60 md:w-80 md:h-80 rounded-full flex relative " style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-          <div className="flex flex-col absolute top-0 shadow-lg w-28 h-28 md:w-32 md:h-32 rounded-full bg-white border-gray-500 items-center justify-center">
-              <span className="text-[#FF3514]">TRUSTED BY</span>
-              <p>6,526</p>
-          </div>
-          <div className="bg-[#FF3514] w-28 h-28 md:w-32 md:h-32 rounded-full flex absolute bottom-0 right-0"/>
+          <div className="w-60 h-60 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] rounded-full flex relative " style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className="flex flex-col absolute top-0 shadow-lg w-28 h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full bg-white border-gray-500 items-center justify-center">
+              <div className="flex flex-col w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full border-black border-dashed border-[2px] items-center justify-center">
+                <span className="text-[#FF3514] text-[12px] md:text-[16px]">TRUSTED BY</span>
+                <p className="text-[12px] md:text-[16px]">6,526</p>
+              </div>
+            </div>
+            <div className="bg-[#FF3514] w-28 h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full flex absolute bottom-0 right-0"/>
           </div>
         </div>
         <div className="flex flex-col flex-1">
          <div className="flex items-center gap-5 mb-5">
           <div className="bg-[#FF3514] w-[20px] h-[20px]" />
-          <h3 className="lg:text-[35px] text-[20px] text-[#000A3E]">About Whitesands</h3>
+          <h3 className="lg:text-[35px] text-[20px] text-[#000A3E]">About Whitesands Agency</h3>
          </div>
          <div>
           <h2 className="font-bold text-[30px] leading-[40px] lg:text-[45px] lg:leading-[50px] text-[#000A3E]">We provide the best Logistics services</h2>
           </div>
           <div className="flex gap-5 my-5">
             <div className="bg-[#FF3514] text-[10px] text-white p-3 rounded-lg">
-              Solution for smaall <br /> & large businesses
+              Solution for Individuals
             </div>
             <div className="p-3 text-[10px] border border-black rounded-lg">
-              Solution for smaall <br /> & large businesses
+              Solution for Businesses
             </div>
           </div>
           <div className="flex flex-col gap-3 lg:w-[500px]">
-            <p className="font-bold md:text-[17px]">There are many variations of passagesof Lorem Ipsum available, but the majorit have suffered alteration in some form, by injected humour, or by randomised word.</p>
-            <p className="md:text-[16px]">You need to be sure there isn&apos;t anything embarassing hidden in the middle of text. All the lorem ipsum generators on the internet.</p>
+            <p className="font-bold md:text-[17px]">Whitesands Agency, the leading logistics provider in the Cayman Islands. With our extensive experience and commitment to excellence, we offer comprehensive logistics solutions tailored to meet the unique needs of our clients. Our services include freight forwarding, customs brokerage, warehousing, and distribution, ensuring seamless and efficient supply chain management.</p>
+            <p className="md:text-[16px]">At Whitesands Agency, we pride ourselves on our dedication to customer satisfaction and our ability to deliver reliable, timely, and cost-effective logistics solutions. Partner with us for all your logistics needs and experience the difference of working with a trusted industry leader.</p>
           </div>
         </div>
       </section>
@@ -131,20 +152,26 @@ export default function Home() {
         <div className="flex gap-5 flex-wrap w-[100%]">
           <div className="w-full md:w-[48%] lg:w-[31%] h-[300px] flex bg-[#0000006f] flex-col justify-end" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
             <div className="p-5">
-              <h2 className="text-white text-[16px]">Automotive</h2>
-              <Button text="Read More" bg="FF3514" />
+              <h2 className="text-white text-[16px]">Freight Forwarding</h2>
+              <Link href="/services#freight">
+                <Button text="Read More" bg="FF3514" />
+              </Link>
             </div>
           </div>
           <div className="w-full md:w-[48%] lg:w-[32%] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
             <div className="p-5">
-              <h2 className="text-white text-[16px]">Chemicals</h2>
-              <Button text="Read More" bg="FF3514" />
+              <h2 className="text-white text-[16px]">Customs Brokerage</h2>
+              <Link href="/services#customs">
+                <Button text="Read More" bg="FF3514" />
+              </Link>
             </div>
           </div>
           <div className="w-full md:w-[48%] lg:w-[32%] h-[300px] flex flex-col justify-end bg-[#0000006f]" style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center', backgroundBlendMode: 'color' }}>
             <div className="p-5">
-              <h2 className="text-white text-[16px]">Delivery</h2>
-              <Button text="Read More" bg="FF3514" />
+              <h2 className="text-white text-[16px]">Transportation</h2>
+              <Link href="/services#transportation">
+                <Button text="Read More" bg="FF3514" />
+              </Link>
             </div>
           </div>
         </div>
@@ -179,7 +206,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex justify-end pr-10 lg:pr-32 mb-10">
-              <a href="" className="cursor-pointer">
+              <a href="/services" className="cursor-pointer">
                 <FaArrowCircleRight className="text-[70px]" />
               </a>
             </div>
@@ -188,19 +215,19 @@ export default function Home() {
         <div className="flex w-full justify-evenly py-2">
           <div className="flex items-center gap-1">
             <p>Warehousing</p>
-            <a href="" className="flex text-10 cursor-pointer">
+            <a href="/services" className="flex text-10 cursor-pointer">
               <FaArrowRight width={60} height={10} />
             </a>
           </div>
           <div className="flex items-center gap-1">
             <p>Get A Quote</p>
-            <a href="" className="flex text-10 cursor-pointer">
+            <a href="/contact" className="flex text-10 cursor-pointer">
               <FaArrowRight width={60} height={10} />
             </a>
           </div>
           <div className="flex items-center gap-1">
             <p>FAQs</p>
-            <a href="" className="flex text-10 cursor-pointer">
+            <a href="/#faq" className="flex text-10 cursor-pointer">
               <FaArrowRight width={60} height={10} />
             </a>
           </div>
@@ -210,7 +237,7 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-col bg-[#FAFAFA] mx-10 lg:mx-20">
-        <div className="flex flex-col lg:pt-10 pb-1">
+        {/* <div className="flex flex-col lg:pt-10 pb-1">
           <div className="flex flex-col justify-center items-center" style={{ backgroundImage: `url(/assets/map-bg.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'contain', backgroundPosition: 'center' }}>
             <h2 className="text-[35px] text-[#000A3E] mt-20 mb-10">Numbers speak for <span className="font-bold"> themselves</span></h2>
             <div className="flex flex-wrap justify-between gap-10 lg:gap-20">
@@ -242,20 +269,20 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className=" flex justify-between md:justify-evenly w-full bg-white py-3 items-center">
           <div>
-            <Image src={techbrand} alt="techbrand" />
+            <Image src={woodvine} alt="woodvine" width={100} />
           </div>
-          <div>
+          {/* <div>
             <Image src={mono} alt="mono"  />
           </div>
           <div>
             <Image src={wolves} alt="wolves" />
-          </div>
+          </div> */}
         </div>
       </section>
-      <section className="flex flex-col md:flex-row mx-10 lg:mx-20 mt-10 gap-10">
+      <section id="faq" className="flex flex-col md:flex-row mx-10 lg:mx-20 mt-10 gap-10">
         <div className="flex-1 flex flex-col">
           <div className="flex gap-3 items-center">
             <div className="w-[10px] h-[10px] md:w-[15px] md:h-[15px] bg-[#FF3514]"/>

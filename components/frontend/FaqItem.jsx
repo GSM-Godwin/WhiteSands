@@ -12,7 +12,7 @@ const FaqItem = ({title, desc, open, toggle}) => {
             </div> */}
         </div>
         <Collapse isOpened={open}>
-            <div className="bg-white rounded-b-2xl shadow-xl border-t-[1.5px] border-[#9A9A9A] mt-[-15px] px-[20px] lg:px-[50px] py-[20px]">{desc}</div>
+            <div className="bg-white rounded-b-2xl shadow-xl border-t-[1.5px] border-[#9A9A9A] mt-[-15px] px-[20px] lg:px-[50px] py-[20px]" dangerouslySetInnerHTML={{ __html: desc }} />
         </Collapse>
     </div>
   )

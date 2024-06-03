@@ -12,19 +12,11 @@ const Reachout = () => {
         </div>
         <div className='flex md:flex-row flex-col justify-between gap-10'>
           <div className="flex items-center gap-5">
-            <Image src={call} alt="call center"/>
-            <div className="">
-              <h3 className="text-[#000A3E] text-[23px] mb-3 font-medium">Call Center</h3>
-              <p className="text-[#000A3E] text-20px">24/7 Support</p>
-              <p className="text-[#000A3E] text-20px">+ (123) 1800-567-8990</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-5">
             <Image src={map} alt="map" width={150}/>
             <div className="">
               <h3 className="text-[#000A3E] text-[23px] mb-3 font-medium">Location</h3>
-              <p className="text-[#000A3E] text-20px">USA, New York - 1060</p>
-              <p className="text-[#000A3E] text-20px">Str. First Avenue 1</p>
+              <p className="text-[#000A3E] text-20px">201 Owen Roberst Drive,</p>
+              <p className="text-[#000A3E] text-20px">Grand Cayman</p>
             </div>
           </div>
         </div>
