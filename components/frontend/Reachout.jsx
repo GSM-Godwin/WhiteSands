@@ -15,7 +15,7 @@ const Reachout = () => {
             <Image src={map} alt="map" width={150}/>
             <div className="">
               <h3 className="text-[#000A3E] text-[23px] mb-3 font-medium">Location</h3>
-              <p className="text-[#000A3E] text-20px">201 Owen Roberst Drive,</p>
+              <p className="text-[#000A3E] text-20px">201 Owen Roberts Drive,</p>
               <p className="text-[#000A3E] text-20px">Grand Cayman</p>
             </div>
           </div>

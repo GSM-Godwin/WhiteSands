@@ -95,7 +95,7 @@ export default function Home() {
             <Image src={map} alt="map" width={150}/>
             <div className="">
               <h3 className="text-[#000A3E] text-[23px] mb-3 font-medium">Location</h3>
-              <p className="text-[#000A3E] text-20px">201 Owen Roberst Drive,</p>
+              <p className="text-[#000A3E] text-20px">201 Owen Roberts Drive,</p>
               <p className="text-[#000A3E] text-20px">Grand Cayman</p>
             </div>
           </div>
@@ -105,7 +105,6 @@ export default function Home() {
           <div>
             <form action="" className="flex flex-col md:items-start">
               <input type="number" placeholder="123456" maxLength={50} className="border-2 h-[46px] w-full" /> 
-              {/* <button onClick={() => {}} className="bg-[#FF3514] p-3 text-white">Track and Trace</button> */}
               <Link href="">
                 <Button text="Track and Trace" bg="FF3514" />
               </Link>
@@ -118,8 +117,8 @@ export default function Home() {
           <div className="w-60 h-60 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] rounded-full flex relative " style={{ backgroundImage: `url(/assets/about-hero.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="flex flex-col absolute top-0 shadow-lg w-28 h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full bg-white border-gray-500 items-center justify-center">
               <div className="flex flex-col w-24 h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full border-[#FF3514] border-dashed border-[2px] items-center justify-center">
-                <span className="text-[#FF3514] text-[12px] md:text-[16px]">TRUSTED BY</span>
-                <p className="text-[12px] md:text-[16px]">6,526</p>
+                <span className="text-[#FF3514] text-[12px] md:text-[16px]">TRUSTED</span>
+                <p className="text-[12px] md:text-[16px]">Globally</p>
               </div>
             </div>
             <div className="bg-[#FF3514] w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-full flex absolute bottom-0 right-0" />
@@ -143,7 +142,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-3 lg:w-[500px]">
             <p className="font-bold md:text-[17px]">Whitesands Agency, the leading logistics provider in the Cayman Islands. With our extensive experience and commitment to excellence, we offer comprehensive logistics solutions tailored to meet the unique needs of our clients. Our services include freight forwarding, customs brokerage, warehousing, and distribution, ensuring seamless and efficient supply chain management.</p>
-            <p className="md:text-[16px]">At Whitesands Agency, we pride ourselves on our dedication to customer satisfaction and our ability to deliver reliable, timely, and cost-effective logistics solutions. Partner with us for all your logistics needs and experience the difference of working with a trusted industry leader.</p>
+            <p className="md:text-[16px] font-bold">At Whitesands Agency, we pride ourselves on our dedication to customer satisfaction and our ability to deliver reliable, timely, and cost-effective logistics solutions. Partner with us for all your logistics needs and experience the difference of working with a trusted industry leader.</p>
           </div>
         </div>
       </section>
@@ -270,9 +269,10 @@ export default function Home() {
             </div>
           </div>
         </div> */}
-        <div className=" flex justify-between md:justify-evenly w-full bg-white py-3 items-center">
+        <div className="flex flex-col pt-10 justify-between md:justify-evenly w-full bg-white py-3 items-center">
+          <h1 className="text-[30px] font-bold">Partnered with</h1>
           <div>
-            <Image src={woodvine} alt="woodvine" width={100} />
+            <Image src={woodvine} alt="woodvine" width={200} />
           </div>
           {/* <div>
             <Image src={mono} alt="mono"  />

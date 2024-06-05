@@ -59,7 +59,7 @@ const Navbar = () => {
             <a href='/server'>
               {user.image}
             </a> :
-            <LoginButton mode='modal' asChild>
+            <LoginButton asChild>
               <FaUserCircle />
             </LoginButton>
           }

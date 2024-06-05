@@ -54,9 +54,6 @@ export default function Sliders () {
             <div className='lg:text-[45px] text-[28px] text-white font-medium mx-5 items-center flex justify-center h-[200px] border' style={{ backgroundImage: `url(/assets/snow-truck.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
                 Cayman Islands
             </div>
-            <div className='lg:text-[45px] text-[28px] text-white font-medium mx-5 items-center flex justify-center h-[200px] border' style={{ backgroundImage: `url(/assets/snow-truck.svg)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-                Melbourne
-            </div>
         </Carousel>
     </div>
   )
