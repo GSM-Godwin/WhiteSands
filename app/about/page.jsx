@@ -113,7 +113,7 @@ const About = () => {
           <p className="text-[12px] text-[#242424]">Whitesands applies its renowned operational expertise to provide best-in-class services across its integrated worldwide network.</p>
         </div>
       </section> */}
-      <section className='p-20 flex bg-[#000A3E] w-full justify-center items-center'>
+      <section className='p-10 md:p-20 flex bg-[#000A3E] w-full justify-center items-center'>
         <div className='flex flex-wrap justify-between items-center w-full'>
           <div className='min-w-[200px] mb-5'>
             <div className=''>
