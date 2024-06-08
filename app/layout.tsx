@@ -5,12 +5,16 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { auth } from "@/auth";
 import Head from "next/head";
+import logo from "@/public/assets/footer-logo.jpg"
 
 const roboto = Roboto({ weight: ["100","300","400","500","700","900"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Whitesands Agency",
   description: "Whitesands Agency is a global leading logistics provider that provides innovative suply chain solutions for a multitude of industries worldwide.",
+  icons : {
+    icon: "/assets/footer-logo.jpg"
+  }
 };
 
 export default async function RootLayout({
