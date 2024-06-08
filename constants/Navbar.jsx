@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className='md:flex mr-[70px] md:mr-0 mt-6 md:mt-0 cursor-pointer text-[30px] items-center justify-center gap-5'>
           {user ? 
             <UserIcon /> :
-            <LoginButton mode='modal' asChild>
+            <LoginButton asChild>
               <FaUserCircle />
             </LoginButton>
           }
