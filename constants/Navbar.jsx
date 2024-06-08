@@ -10,26 +10,26 @@ import { useCurrentUser } from '@/hooks/use-current-user';
 import logo from "@/public/assets/footer-logo.jpg"
 import Image from 'next/image';
 import Button from '@/components/frontend/Button';
-import { UserButton } from '@/components/auth/user-button';
+import { UserIcon } from '@/components/auth/user-icon';
 
 const Navbar = () => {
   const user = useCurrentUser()
   return (
     <section>
-      <div className='flex justify-between w-full border-b-[1.5px] border-gray-300 px-10 md:px-20'>
+      <div className='flex justify-between w-full border-b-[1.5px] border-gray-300 px-0 md:px-20'>
         <div className=''>
           <a href="/">
             <Image src={logo} width={100} alt='Whitesands Agency logo'/>
           </a>
         </div>
-        <div className='hidden md:flex cursor-pointer text-[30px] items-center justify-center gap-5'>
+        <div className='md:flex mr-[70px] md:mr-0 mt-6 md:mt-0 cursor-pointer text-[30px] items-center justify-center gap-5'>
           {user ? 
-            <UserButton /> :
+            <UserIcon /> :
             <LoginButton mode='modal' asChild>
               <FaUserCircle />
             </LoginButton>
           }
-          <a href="/contact">
+          <a href="/contact" className='hidden md:flex'>
             <Button text="Get A Quote" bg="" />
           </a>
         </div>
@@ -42,24 +42,18 @@ const Navbar = () => {
             <NavItem href="/services" label="Services" />
             <NavItem href="/contact" label="Contact Us" />
           </div>
-          <a href="/booking" className='bg-orange-500 p-2 text-white'>Book Now</a>
+          <a href="/booking" className='bg-[#FF3514] p-2 text-white'>Book Now</a>
         </div>
         {/* <div className='flex items-center justify-center'>
           <FaSearch />
         </div> */}
       </nav>
       <nav className='md:hidden'>
-        <label id='hamburger-menu' className='mt-5 mr-10' >
+        <label id='hamburger-menu' className='mt-5 mr-5' >
           <input type="checkbox"/>
         </label>
         <aside id='sidebar' className='py-5 hidden'>
           <div className='flex flex-col cursor-pointer text-[30px] items-center justify-center gap-5'>
-          {user ? 
-            <UserButton /> :
-            <LoginButton asChild>
-              <FaUserCircle />
-            </LoginButton>
-          }
             <Button text="Get A Quote" bg="" href="/contact" />
           </div>
           <nav className="bg-white py-2 flex flex-col justify-between px-10">
@@ -70,7 +64,7 @@ const Navbar = () => {
                 <NavItem href="/services" label="Services" />
                 <NavItem href="/contact" label="Contact Us" />
               </div>
-              <a href="/booking" className='bg-orange-500 p-2 text-white'>Book Now</a>
+              <a href="/booking" className='bg-[#FF3514] p-2 text-white'>Book Now</a>
             </div>
             {/* <div className='flex items-center justify-center'>
               <FaSearch />
@@ -87,7 +81,7 @@ const NavItem = ({ href, label }) => {
     const isActive = pathName === href;
     return (
       <Link legacyBehavior href={href}>
-      <a className={`text-blue-900 hover:text-orange-500 px-3 py-2 rounded-md text-sm font-medium ${isActive ? "text-orange-500" : ''}`}>
+      <a className={`text-blue-900 hover:text-[#FF3514] px-3 py-2 rounded-md text-sm font-medium ${isActive ? "text-customOrange" : ''}`}>
         {label}
       </a>
     </Link>
