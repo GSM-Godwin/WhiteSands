@@ -10,6 +10,7 @@ import { useCurrentUser } from '@/hooks/use-current-user';
 import logo from "@/public/assets/footer-logo.jpg"
 import Image from 'next/image';
 import Button from '@/components/frontend/Button';
+import { UserButton } from '@/components/auth/user-button';
 
 const Navbar = () => {
   const user = useCurrentUser()
@@ -23,9 +24,7 @@ const Navbar = () => {
         </div>
         <div className='hidden md:flex cursor-pointer text-[30px] items-center justify-center gap-5'>
           {user ? 
-            <a href='/server'>
-              {user.image}
-            </a> :
+            <UserButton /> :
             <LoginButton mode='modal' asChild>
               <FaUserCircle />
             </LoginButton>
@@ -56,9 +55,7 @@ const Navbar = () => {
         <aside id='sidebar' className='py-5 hidden'>
           <div className='flex flex-col cursor-pointer text-[30px] items-center justify-center gap-5'>
           {user ? 
-            <a href='/server'>
-              {user.image}
-            </a> :
+            <UserButton /> :
             <LoginButton asChild>
               <FaUserCircle />
             </LoginButton>
