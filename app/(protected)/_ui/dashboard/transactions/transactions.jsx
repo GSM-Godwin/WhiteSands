@@ -1,12 +1,14 @@
 import Image from "next/image";
 import styles from './transactions.module.css'
 import pic from "../../../../../public/assets/pic.png"
+import { db } from "@/lib/db";
 
-const Transactions = () => {
+const Transactions = async () => {
+    // const transactions = await db.transactions.findMany()
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Latest Transactions</h2>
-            <table className={styles.table}>
+            {/* <table className={styles.table}>
                 <thead>
                     <tr>
                         <td>Name</td>
@@ -26,7 +28,11 @@ const Transactions = () => {
                                     height={40}
                                     className={styles.userImage}
                                 />
-                                John Doe
+                                {transactions.map((transactions) => (
+                                    <li key={transactions}>
+
+                                    </li>
+                                ))}
                             </div>
                         </td>
                         <td>
@@ -101,7 +107,7 @@ const Transactions = () => {
                         <td>$300</td>
                     </tr>
                 </tbody>
-            </table>
+            </table> */}
         </div>
     )
 }

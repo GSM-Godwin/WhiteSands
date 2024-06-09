@@ -1,9 +1,9 @@
-import React from 'react'
+import Users from "../../_ui/dashboard/users/users"
 
-const UsersPage = () => {
+const UsersPage = async () => {
   return (
     <div>
-      UsersPage
+      <Users />
     </div>
   )
 }

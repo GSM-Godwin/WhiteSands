@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { UserRole } from "@prisma/client"
 import { toast } from "sonner"
+import { Navbar } from "../_components/navbar"
 
 const AdminPage = () => {
     const onServerActionClick = () => {

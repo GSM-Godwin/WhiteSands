@@ -1,45 +1,23 @@
-"use server";
-import { db } from "@/lib/db";
+"use server"
 
-export const transactions = async ({
-    pickupLocation,
-    dropoffLocation,
-    weight,
-    height,
-    length,
-    width,
-    name,
-    id,
-    email,
-    phone,
-    isDangerousGoods,
-    isLiveAnimals,
-    isHumanRemains,
-    isSeaFreight,
-  }) => {
-    try {
-      const newTransaction = await db.transaction.create({
-        data: {
-          pickupLocation,
-          dropoffLocation,
-          weight,
-          height,
-          length,
-          width,
-          name,
-          id,
-          email,
-          phone,
-          isDangerousGoods,
-          isLiveAnimals,
-          isHumanRemains,
-          isSeaFreight,
-        },
-      });
-  
-      return { success: true, transaction: newTransaction };
-    } catch (error) {
-      console.error('Error creating transaction:', error);
-      return { success: false, error: 'Internal server error' };
+import { db } from "@/lib/db"
+
+export async function transactions(formData) {
+  await db.transaction.create({
+    data: {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      weight: formData.get("weight"),
+      height: formData.get("height"),
+      length: formData.get("length"),
+      width: formData.get("width"),
+      pickupLocation: formData.get("pickupLocation"),
+      dropoffLocation: formData.get("dropoffLocation"),
+      dangerousGoods: formData.get("dangerousGoods"),
+      liveAnimals: formData.get("liveAnimals"),
+      humanRemains: formData.get("humanRemains"),
+      seaFreight: formData.get("seaFreight"),
+      price: formData.get("price"),
     }
-  };
+  })
+}

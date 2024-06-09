@@ -106,7 +106,7 @@ const BookingPage = () => {
     const [isLiveAnimals, setIsLiveAnimals] = useState(false);
     const [isHumanRemains, setIsHumanRemains] = useState(false);
     const [isSeaFreight, setIsSeaFreight] = useState(false);
-    const [totalCost, setTotalCost] = useState('');
+    const [totalCost, setTotalCost] = useState(0);
 
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -218,9 +218,9 @@ const BookingPage = () => {
 
     useEffect(() => {
         const cost = calculateShippingCost({
-            weight: parseFloat(weight),
-            length: parseFloat(length),
-            width: parseFloat(width),
+            weight: (weight),
+            length: (length),
+            width: (width),
             isDangerousGoods,
             isLiveAnimals,
             isHumanRemains,

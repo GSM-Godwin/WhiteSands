@@ -1,3 +1,4 @@
+"use client"
 import {
   MdDashboard,
   MdSupervisedUserCircle,
@@ -10,7 +11,8 @@ import styles from "./sidebar.module.css"
 import Image from "next/image"
 import MenuLink from "./menuLink/menuLink"
 
-import pic from "@/public/assets/pic.png"
+import { UserButton } from "@/components/auth/user-button"
+import { useCurrentUser } from "@/hooks/use-current-user"
 
 const menuItems = [
   {
@@ -56,18 +58,14 @@ const menuItems = [
 ]
 
 const Sidebar = () => {
+  const user = useCurrentUser();
+
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <Image
-          className={styles.userImage}
-          src={pic}
-          alt=""
-          width="50"
-          height="50"
-        />
+        <UserButton />
         <div className={styles.userDetail}>
-          <span className={styles.username}>John Doe</span>
+          <span className={styles.username}>{user.name}</span>
           <span className={styles.userTitle}>Admin</span>
         </div>
       </div>
