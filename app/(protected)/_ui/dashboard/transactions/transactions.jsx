@@ -28,8 +28,8 @@ const Transactions = async () => {
                     </tr>
                 </thead>
                 <tbody>
-                {posts.map((post) => (
-                    <tr>
+                {posts.map((post, index) => (
+                    <tr key={index}>
                         <td>
                             <div className={styles.user}>
                                 <Image 
