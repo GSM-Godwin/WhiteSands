@@ -12,8 +12,8 @@ const dashboard = () => {
         <div className={styles.wrapper}>
             <div className={styles.main}>
               <div className={styles.cards}>
-                {cards.map((item) => (
-                  <Link className={styles.cards} href={item.href}>
+                {cards.map((item, index) => (
+                  <Link key={index} className={styles.cards} href={item.href}>
                     <Card item={item} key={item.id} />
                   </Link>
                 ))}

@@ -241,7 +241,7 @@ const BookingPage = async () => {
                     </p>
                 </CardHeader>
                 <CardContent>
-                    {/* <form
+                    <form
                         className="space-y-6"
                         action={createPost}
                         onSubmit={handleSubmit}
@@ -312,8 +312,7 @@ const BookingPage = async () => {
                         >
                             Confirm Shipment
                         </Button>
-                    </form> */}
-                    <Book />
+                    </form>
                 </CardContent>
             </Card>
         </div>
