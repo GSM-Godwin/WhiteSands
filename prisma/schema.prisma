@@ -111,3 +111,20 @@ model Transaction {
 
   @@index([userId])
 }
+
+model Post {
+  id String @id @default(cuid())
+  name String
+  weight  String
+  height  String
+  length  String
+  width   String
+  pickupLocation    String
+  dropoffLocation   String
+  isDangerousGoods    YesNo
+  isLiveAnimals       YesNo
+  isHumanRemains      YesNo
+  price   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}

@@ -8,7 +8,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState, useRef, useEffect } from "react";
 import { useCurrentUser } from "@/hooks/use-current-user";
-import { transactions } from "@/actions/transactions"
+import { createPost } from '@/actions/posts';
+import { db } from '@/lib/db';
+import Book from '../form/page';
 
 const calculateShippingCost = ({
     weight,
@@ -60,8 +62,9 @@ const calculateShippingCost = ({
     return totalCost;
 };
 
-const BookingPage = () => {
+const BookingPage = async () => {
     const user = useCurrentUser();
+    const posts = await db.post.findMany()
 
     const pickupInputRef = useRef(null);
     const dropoffInputRef = useRef(null);
@@ -238,8 +241,9 @@ const BookingPage = () => {
                     </p>
                 </CardHeader>
                 <CardContent>
-                    <form
+                    {/* <form
                         className="space-y-6"
+                        action={createPost}
                         onSubmit={handleSubmit}
                     >
                         <div className="space-y-4 flex flex-col gap-3">
@@ -253,19 +257,19 @@ const BookingPage = () => {
                             </label>
                             <label className="flex flex-col text-[12px]">
                                 Weight:
-                                <input type='number' min={0} value={weight} onChange={handleInputChange} id="weight" name="weight" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" placeholder='Weight of parcel in lbs' />
+                                <input type='text' value={weight} onChange={handleInputChange} id="weight" name="weight" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" placeholder='Weight of parcel in lbs' />
                             </label>
                             <label className="flex flex-col text-[12px]">
                                 Height:
-                                <input type='number' min={0} value={height} onChange={handleInputChange} id="height" name="height" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" placeholder='Height of parcel in inches' />
+                                <input type='text' value={height} onChange={handleInputChange} id="height" name="height" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" placeholder='Height of parcel in inches' />
                             </label>
                             <label className="flex flex-col text-[12px]">
                                 Width:
-                                <input type='number' min={0} value={width} onChange={handleInputChange} id="width" name="width" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" placeholder='Width of parcel in inches' />
+                                <input type='text' value={width} onChange={handleInputChange} id="width" name="width" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" placeholder='Width of parcel in inches' />
                             </label>
                             <label className="flex flex-col text-[12px]">
                                 Length:
-                                <input type='number' min={0} value={length} onChange={handleInputChange} id="length" name="length" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" placeholder='Length of parcel in inches' />
+                                <input type='text' value={length} onChange={handleInputChange} id="length" name="length" className="border-gray-200 text-[16px] py-1 font-light text-primary px-3 rounded-lg shadow-sm border-[1px]" placeholder='Length of parcel in inches' />
                             </label>
                             <label className="flex flex-col text-[12px]">
                                 Dangerous Goods:
@@ -308,7 +312,8 @@ const BookingPage = () => {
                         >
                             Confirm Shipment
                         </Button>
-                    </form>
+                    </form> */}
+                    <Book />
                 </CardContent>
             </Card>
         </div>

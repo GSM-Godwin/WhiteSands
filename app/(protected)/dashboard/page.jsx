@@ -4,6 +4,7 @@ import { cards } from "../../lib/data"
 import Card from "../_ui/dashboard/card/card"
 import Transactions from "../_ui/dashboard/transactions/transactions"
 import styles from "../_ui/dashboard/dashboard.module.css"
+import Link from "next/link"
 
 const dashboard = () => {
   return (
@@ -12,7 +13,9 @@ const dashboard = () => {
             <div className={styles.main}>
               <div className={styles.cards}>
                 {cards.map((item) => (
-                  <Card item={item} key={item.id} />
+                  <Link className={styles.cards} href={item.href}>
+                    <Card item={item} key={item.id} />
+                  </Link>
                 ))}
               </div>
               <Transactions />
