@@ -12,6 +12,15 @@ enum YesNo {
   NO
 }
 
+enum Status {
+  PENDING
+  PICKEDUP
+  SHIPPED
+  CUSTOMS
+  WAREHOUSE
+  DELIVERED
+}
+
 enum UserRole {
   ADMIN
   USER
@@ -124,6 +133,7 @@ model Post {
   isDangerousGoods    YesNo
   isLiveAnimals       YesNo
   isHumanRemains      YesNo
+  status  Status
   price   String
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt

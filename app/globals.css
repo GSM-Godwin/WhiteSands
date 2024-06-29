@@ -146,6 +146,8 @@ input[type=number] {
   overflow-y: none;
   z-index: 100;
   width: 100vw;
+  justify-items: center;
+  align-items: center;
   height: 100vh;
   background: #fff;
 }

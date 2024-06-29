@@ -58,7 +58,7 @@ const Navbar = () => {
           </div>
           <nav className="bg-white py-2 flex flex-col justify-between px-10">
             <div className='flex flex-col justify-center items-center'>
-              <div className="flex flex-col items-center space-x-4">
+              <div className="flex flex-col justify-center items-center">
                 <NavItem href="/" label="Home" />
                 <NavItem href="/about" label="About Us" />
                 <NavItem href="/services" label="Services" />
@@ -81,9 +81,9 @@ const NavItem = ({ href, label }) => {
     const isActive = pathName === href;
     return (
       <Link legacyBehavior href={href}>
-      <a className={`text-blue-900 hover:text-[#FF3514] px-3 py-2 rounded-md text-sm font-medium ${isActive ? "text-customOrange" : ''}`}>
-        {label}
-      </a>
+        <a className={`text-blue-900 hover:text-[#FF3514] px-3 py-2 rounded-md text-sm font-medium ${isActive ? "text-customOrange" : ''}`}>
+          {label}
+        </a>
     </Link>
   );
 };

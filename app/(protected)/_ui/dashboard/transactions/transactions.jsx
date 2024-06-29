@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from './transactions.module.css'
 import pic from "../../../../../public/assets/pic.png"
 import { db } from "@/lib/db";
+import Link from "next/link";
 
 const Transactions = async () => {
     const posts = await db.post.findMany({
@@ -16,81 +17,63 @@ const Transactions = async () => {
                 <thead>
                     <tr>
                         <td>Name</td>
-                        <td>Weight</td>
-                        <td>Length</td>
-                        <td>Height</td>
-                        <td>Width</td>
-                        <td>Pickup</td>
-                        <td>Dropoff</td>
-                        <td>D.G</td>
-                        <td>L.A</td>
-                        <td>H.R</td>
+                        <td>ID</td>
+                        <td>Pickup Loction</td>
+                        <td>Dropoff Location</td>
+                        <td>Status</td>
+                        <td>Price</td>
                     </tr>
                 </thead>
                 <tbody>
-                {posts.map((post, index) => (
-                    <tr key={index}>
-                        <td>
-                            <div className={styles.user}>
-                                <Image 
-                                    src={pic}
-                                    alt=""
-                                    width={40}
-                                    height={40}
-                                    className={styles.userImage}
-                                />
-                                
-                                    <li className="list-none" key={post.id}>
-                                        {post.name}
-                                    </li>
-                            </div>
-                        </td>
-                        <td>
-                            <li className="list-none" key={post.id}>
-                                {post.weight}
-                            </li>
-                        </td>
-                        <td>
-                            <li className="list-none flex" key={post.id}>
-                                {post.length}
-                            </li>
-                        </td>
-                        <td>
-                            <li className="list-none" key={post.id}>
-                                {post.height}
-                            </li>
-                        </td>
-                        <td>
-                            <li className="list-none" key={post.id}>
-                                {post.width}
-                            </li>
-                        </td>
-                        <td>
-                            <li className="list-none" key={post.id}>
-                                {post.pickupLocation}
-                            </li>
-                        </td>
-                        <td>
-                            <li className="list-none" key={post.id}>
-                            {post.dropoffLocation}
-                            </li>
-                        </td>
-                        <td>
-                            <li className="list-none" key={post.id}>
-                                {post.dangerousGoods}
-                            </li>
-                        </td>
-                        <td>
-                            <li className="list-none" key={post.id}>
-                                {post.liveAnimals}
-                            </li>
-                        </td>
-                        <td>
-                            <li className="list-none" key={post.id}>
-                                {post.humanRemains}
-                            </li>
-                        </td>
-                    </tr>
+                    {posts.map((post, index) => (
+                        <tr key={index}>
+                            <td>
+                                <div className={styles.user}>
+                                    {/* <Image 
+                                        src={pic}
+                                        alt=""
+                                        width={40}
+                                        height={40}
+                                        className={styles.userImage}
+                                    /> */}
+                                    
+                                        <li className="list-none" key={post.id}>
+                                            <Link href={`/posts/${post.id}`}>
+                                                {post.name}
+                                            </Link>
+                                        </li>
+                                </div>
+                            </td>
+                            <td>
+                                <li className="list-none" key={post.id}>
+                                    <Link href={`/posts/${post.id}`}>
+                                        {post.id}
+                                    </Link>
+                                </li>
+                            </td>
+                            <td>
+                                <li className="list-none" key={post.id}>
+                                    {post.pickupLocation}
+                                </li>
+                            </td>
+                            <td>
+                                <li className="list-none flex" key={post.id}>
+                                    {post.dropoffLocation}
+                                </li>
+                            </td>
+                            <td>
+                                <li className="list-none" key={post.id}>
+                                    <Link href={`/posts/${post.id}`}>
+                                        {post.status}
+                                    </Link>
+                                </li>
+                            </td>
+                            <td>
+                                <li className="list-none" key={post.id}>
+                                    {post.price}
+                                </li>
+                            </td>
+                        </tr>
                     ))}
                 </tbody>
             </table>

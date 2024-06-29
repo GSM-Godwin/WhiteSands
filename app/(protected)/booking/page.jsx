@@ -5,12 +5,12 @@ import {
     CardHeader,
     CardContent,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { useState, useRef, useEffect } from "react";
 import { useCurrentUser } from "@/hooks/use-current-user";
-import { createPost } from '@/actions/posts';
-import { db } from '@/lib/db';
-import Book from '../form/page';
+// import { createPost } from '@/actions/posts';
+// import { db } from '@/lib/db';
+import Book from '../posts/page';
 
 const calculateShippingCost = ({
     weight,
@@ -62,9 +62,9 @@ const calculateShippingCost = ({
     return totalCost;
 };
 
-const BookingPage = async () => {
+const BookingPage = ({ children }) => {
     const user = useCurrentUser();
-    const posts = await db.post.findMany()
+    // const posts = db.post.findMany()
 
     const pickupInputRef = useRef(null);
     const dropoffInputRef = useRef(null);
@@ -241,7 +241,7 @@ const BookingPage = async () => {
                     </p>
                 </CardHeader>
                 <CardContent>
-                    <form
+                    {/* <form
                         className="space-y-6"
                         action={createPost}
                         onSubmit={handleSubmit}
@@ -312,7 +312,8 @@ const BookingPage = async () => {
                         >
                             Confirm Shipment
                         </Button>
-                    </form>
+                    </form> */}
+                    <Book />
                 </CardContent>
             </Card>
         </div>
