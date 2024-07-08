@@ -19,8 +19,6 @@ const calculateShippingCost = ({
     isDangerousGoods = false,
     isLiveAnimals = false,
     isHumanRemains = false,
-    isVehicle = false,
-    isSeaFreight = false
 }) => {
     const brokerageBase = 50.00;
     let airFreightCharge = 0;
@@ -28,10 +26,6 @@ const calculateShippingCost = ({
 
     // Check if the cargo is oversize
     const isOversize = length > 48 || width > 48;
-
-    if (isVehicle || isSeaFreight) {
-        return 'To be determined';
-    }
 
     // Calculate the air freight charge
     if (weight <= 20) {
@@ -108,7 +102,6 @@ const BookingPage = ({ children }) => {
     const [isDangerousGoods, setIsDangerousGoods] = useState(false);
     const [isLiveAnimals, setIsLiveAnimals] = useState(false);
     const [isHumanRemains, setIsHumanRemains] = useState(false);
-    const [isSeaFreight, setIsSeaFreight] = useState(false);
     const [totalCost, setTotalCost] = useState(0);
 
     const handleInputChange = (e) => {
@@ -153,9 +146,6 @@ const BookingPage = ({ children }) => {
             case 'isHumanRemains':
                 setIsHumanRemains(checked);
                 break;
-            case 'isSeaFreight':
-                setIsSeaFreight(checked);
-                break;
             default:
                 break;
         }
@@ -170,7 +160,6 @@ const BookingPage = ({ children }) => {
             isDangerousGoods,
             isLiveAnimals,
             isHumanRemains,
-            isSeaFreight
         });
 
         const templateParams = {
@@ -189,7 +178,6 @@ const BookingPage = ({ children }) => {
             isDangerousGoods: isDangerousGoods ? 'Yes' : 'No',
             isLiveAnimals: isLiveAnimals ? 'Yes' : 'No',
             isHumanRemains: isHumanRemains ? 'Yes' : 'No',
-            isSeaFreight: isSeaFreight ? 'Yes' : 'No'
         };
 
         emailjs.init(apiKey);
@@ -207,7 +195,6 @@ const BookingPage = ({ children }) => {
                 setIsDangerousGoods(false);
                 setIsLiveAnimals(false);
                 setIsHumanRemains(false);
-                setIsSeaFreight(false);
                 setTotalCost('');
 
                 // Display alert message
@@ -227,10 +214,9 @@ const BookingPage = ({ children }) => {
             isDangerousGoods,
             isLiveAnimals,
             isHumanRemains,
-            isSeaFreight
         });
         setTotalCost(cost);
-    }, [weight, length, width, isDangerousGoods, isLiveAnimals, isHumanRemains, isSeaFreight]);
+    }, [weight, length, width, isDangerousGoods, isLiveAnimals, isHumanRemains]);
 
     return (
         <div className='w-full'>
@@ -282,10 +268,6 @@ const BookingPage = ({ children }) => {
                             <label className="flex flex-col text-[12px]">
                                 Human Remains:
                                 <input type='checkbox' checked={isHumanRemains} onChange={handleInputChange} id="isHumanRemains" name="isHumanRemains" />
-                            </label>
-                            <label className="flex flex-col text-[12px]">
-                                Sea Freight:
-                                <input type='checkbox' checked={isSeaFreight} onChange={handleInputChange} id="isSeaFreight" name="isSeaFreight" />
                             </label>
                             <label className="hidden flex-col text-[12px]">
                                 Name:

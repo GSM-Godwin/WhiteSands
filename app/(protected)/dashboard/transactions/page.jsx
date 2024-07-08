@@ -1,9 +1,13 @@
+import { RoleGate } from "@/components/auth/role-gate"
 import Transactions from "../../_ui/dashboard/transactions/transactions"
+import { UserRole } from "@prisma/client"
 const page = async () => {
   return (
-    <div>
-      <Transactions />
-    </div>
+    <RoleGate allowedRole={UserRole.ADMIN}>
+      <div>
+        <Transactions />
+      </div>
+    </RoleGate>
   )
 }
 

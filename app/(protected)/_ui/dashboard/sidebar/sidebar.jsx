@@ -13,6 +13,8 @@ import MenuLink from "./menuLink/menuLink"
 
 import { UserButton } from "@/components/auth/user-button"
 import { useCurrentUser } from "@/hooks/use-current-user"
+import { RoleGate } from "@/components/auth/role-gate"
+import { UserRole } from "@prisma/client"
 
 const menuItems = [
   {
@@ -41,25 +43,27 @@ const Sidebar = () => {
   const user = useCurrentUser();
 
   return (
-    <div className={styles.container}>
-      <div className={styles.user}>
-        <UserButton />
-        <div className={styles.userDetail}>
-          <span className={styles.username}>{user.name}</span>
-          <span className={styles.userTitle}>Admin</span>
+    <RoleGate allowedRole={UserRole.ADMIN}>
+      <div className={styles.container}>
+        <div className={styles.user}>
+          <UserButton />
+          <div className={styles.userDetail}>
+            <span className={styles.username}>{user.name}</span>
+            <span className={styles.userTitle}>{user.role}</span>
+          </div>
         </div>
+        <ul className={styles.list}>
+          {menuItems.map((cat) => (
+            <li key={cat.title}>
+              <span className={styles.cat}>{cat.title}</span>
+              {cat.list.map((item) => (
+                <MenuLink item={item} key={item.title} />
+              ))}
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className={styles.list}>
-        {menuItems.map((cat) => (
-          <li key={cat.title}>
-            <span className={styles.cat}>{cat.title}</span>
-            {cat.list.map((item) => (
-              <MenuLink item={item} key={item.title} />
-            ))}
-          </li>
-        ))}
-      </ul>
-    </div>
+    </RoleGate>
   )
 }
 

@@ -1,6 +1,5 @@
 "use client"
 
-// import { Poppins } from "next/font/google";
 import { useState } from "react";
 import Image from "next/image";
 import {FaArrowRight, FaArrowCircleRight } from "react-icons/fa"
@@ -13,21 +12,16 @@ import Footer from "@/constants/Footer";
 import trucks from "@/public/assets/trucks.png"
 import faq from "@/public/assets/faq-svg.svg"
 import map from "@/public/assets/map.png"
-import call from "@/public/assets/call-center.png"
 import Button from "@/components/frontend/Button";
 import pic from "@/public/assets/pic.png"
-import clients from "@/public/assets/Clients-svg.png"
-import goods from "@/public/assets/Goods-svg.png"
-import truck from "@/public/assets/truck-svg.png"
-import countries from "@/public/assets/countries-svg.png"
-import mono from "@/public/assets/Mono.png"
-import techbrand from "@/public/assets/Techbrand.png"
-import wolves from "@/public/assets/Wolves.png"
 import woodvine from "@/public/assets/woodvine.jpg"
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
+  const [trackingNumber, setTrackingNumber] = useState("")
 
   const toggle = (index) => {
     if(open === index) {
@@ -36,6 +30,19 @@ export default function Home() {
 
     setOpen(index)
   }
+
+  const handleChange = (e) => {
+    setTrackingNumber(e.target.value);
+    console.log(trackingNumber);
+  }
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+
+    if (trackingNumber) {
+      router.push(`/track/${trackingNumber}`);
+    }
+  };
 
   const faqData = [
     {
@@ -103,11 +110,9 @@ export default function Home() {
         <div className="flex lg:w-[29%] px-5 md:px-0 lg:pl-5 lg:border-l-2 flex-col mt-10 lg:mt-0">
           <h3 className="text-[#000A3E] text-[23px] md:mb-3 font-medium">Track and Trace</h3>
           <div>
-            <form action="" className="flex flex-col md:items-start">
-              <input type="number" placeholder="123456" maxLength={50} className="border-2 h-[46px] w-full" /> 
-              <Link href="">
-                <Button text="Track and Trace" bg="FF3514" />
-              </Link>
+            <form onSubmit={handleButtonClick} className="flex flex-col md:items-start">
+              <input type="text" placeholder="123456" maxLength={50} className="border-2 h-[46px] w-full" value={trackingNumber} onChange={handleChange} /> 
+              <button className="bg-[#FF3514] text-white border border-red-600 w-max px-7 py-3 text-sm" type="submit">Track and Trace</button>
             </form>
           </div>
         </div>

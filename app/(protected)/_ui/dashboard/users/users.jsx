@@ -2,8 +2,9 @@ import { db } from "@/lib/db";
 import styles from './users.module.css';
 import Image from "next/image";
 import pic from "../../../../../public/assets/pic.png";
-import Pagination from "../pagination/pagination"
-import Search from "../search/search"
+// import Pagination from "../pagination/pagination"
+// import Search from "../search/search"
+import RoleDropdown from "@/app/(protected)/_components/RoleDropdown"
 
 const Users = async () => {
     const users = await db.user.findMany();
@@ -44,7 +45,11 @@ const Users = async () => {
                             </td>
                             <td>{user.id}</td>
                             <td>{user.email}</td>
-                            <td>{user.role}</td>
+                            <td>
+                                <li className="list-none" key={user.id}>
+                                    <RoleDropdown id={user.id} role={user.role} />
+                                </li>
+                            </td>
                             <td>{user.address}</td>
                             <td>{user.post}</td>
                             <td>{user.phone}</td>

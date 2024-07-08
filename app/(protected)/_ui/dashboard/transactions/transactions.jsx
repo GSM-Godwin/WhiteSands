@@ -1,8 +1,7 @@
-import Image from "next/image";
 import styles from './transactions.module.css'
-import pic from "../../../../../public/assets/pic.png"
 import { db } from "@/lib/db";
 import Link from "next/link";
+import StatusDropdown from "@/app/(protected)/_components/StatusDropdown"
 
 const Transactions = async () => {
     const posts = await db.post.findMany({
@@ -10,6 +9,7 @@ const Transactions = async () => {
             createdAt: "desc"
         },
     })
+    const user = await db.user.findMany()
     return (
         <div className={styles.container}>
             <h2 className={styles.title}>Latest Transactions</h2>
@@ -17,7 +17,7 @@ const Transactions = async () => {
                 <thead>
                     <tr>
                         <td>Name</td>
-                        <td>ID</td>
+                        <td>Shipment ID</td>
                         <td>Pickup Loction</td>
                         <td>Dropoff Location</td>
                         <td>Status</td>
@@ -38,9 +38,7 @@ const Transactions = async () => {
                                     /> */}
                                     
                                         <li className="list-none" key={post.id}>
-                                            <Link href={`/posts/${post.id}`}>
-                                                {post.name}
-                                            </Link>
+                                            {post.name}
                                         </li>
                                 </div>
                             </td>
@@ -63,9 +61,7 @@ const Transactions = async () => {
                             </td>
                             <td>
                                 <li className="list-none" key={post.id}>
-                                    <Link href={`/posts/${post.id}`}>
-                                        {post.status}
-                                    </Link>
+                                    <StatusDropdown id={post.id} status={post.status} />
                                 </li>
                             </td>
                             <td>
