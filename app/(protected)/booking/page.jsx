@@ -56,7 +56,7 @@ const calculateShippingCost = ({
     return totalCost;
 };
 
-const BookingPage = ({ children }) => {
+const BookingPage = () => {
     const user = useCurrentUser();
     // const posts = db.post.findMany()
 

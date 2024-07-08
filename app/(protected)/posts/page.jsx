@@ -1,9 +1,8 @@
+"use client"
 import { Status, YesNo } from "@prisma/client"
-import { db } from "../../../lib/db"
 import { createPost } from "@/actions/posts"
 
-const page = async () => {
-    const posts = await db.post.findMany()
+const page = () => {
   return (
     <div>
       <form action={createPost} className="bg-gray-300 flex flex-col gap-2">
