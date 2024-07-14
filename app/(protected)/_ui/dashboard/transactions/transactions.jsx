@@ -44,7 +44,7 @@ const Transactions = async () => {
                             </td>
                             <td>
                                 <li className="list-none" key={post.id}>
-                                    <Link href={`/posts/${post.id}`}>
+                                    <Link href={`/posts/${post.id}`} target='_blank'>
                                         {post.id}
                                     </Link>
                                 </li>

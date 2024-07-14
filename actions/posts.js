@@ -12,9 +12,9 @@ export async function createPost(formData) {
             width: formData.get("width"),
             pickupLocation: formData.get("pickupLocation"),
             dropoffLocation: formData.get("dropoffLocation"),
-            isDangerousGoods: formData.get("dangerousGoods"),
-            isLiveAnimals: formData.get("liveAnimals"),
-            isHumanRemains: formData.get("humanRemains"),
+            isDangerousGoods: formData.get("isDangerousGoods"),
+            isLiveAnimals: formData.get("isLiveAnimals"),
+            isHumanRemains: formData.get("isHumanRemains"),
             status: formData.get("status"),
             price: formData.get("price"),
         }

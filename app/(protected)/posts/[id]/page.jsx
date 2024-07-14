@@ -1,7 +1,7 @@
 import React from 'react'
 import { db } from '../../../../lib/db'
 import { editPost } from "@/actions/posts"
-import { Status, YesNo } from '@prisma/client';
+import { YesNo } from '@prisma/client';
 
 
 const page = async ({ params }) => {
@@ -11,11 +11,9 @@ const page = async ({ params }) => {
         }
     });
   return (
-    <div>
-        <h1>{post?.name}</h1>
-        <p>{post.id}</p>
+    <div className='w-full'>
         <div>
-          <form action={editPost} className="bg-gray-300 flex flex-col gap-2">
+          <form action={editPost} className="bg-gray-100 flex flex-col gap-2">
             <label htmlFor="name" className='flex flex-col'>
               Name
               <input type="text" name="name" placeholder="name" value={post.name} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
@@ -74,16 +72,8 @@ const page = async ({ params }) => {
               </label>      
               <label htmlFor="status" className='flex flex-col'>
                 Status
-                <select name="status" className="px-2 py-1 rounded-sm border-2 border-gray-500">
-                  <option value={Status.PENDING}>Pending</option>
-                  <option value={Status.PICKEDUP}>Picked Up</option>
-                  <option value={Status.SHIPPED}>Shipped</option>
-                  <option value={Status.CUSTOMS}>In Customs</option>
-                  <option value={Status.WAREHOUSE}>In Warehouse</option>
-                  <option value={Status.DELIVERED}>Ready for Pickup</option>
-                </select>
+                <input type='text' name="status" value={post.status} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
               </label>
-              <button type="submit" className="bg-blue-500 py-2 text-white rounded-sm">Update Shipment</button>
           </form>
         </div>
     </div>
