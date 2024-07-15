@@ -1,3 +1,5 @@
+"use client"
+
 import { Status, YesNo } from "@prisma/client"
 import { createPost } from "@/actions/posts"
 import { useEffect, useRef, useState } from "react";
