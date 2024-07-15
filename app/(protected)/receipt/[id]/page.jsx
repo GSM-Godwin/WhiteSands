@@ -12,7 +12,7 @@ const page = async ({ params }) => {
     });
     
     return (
-        <div className='bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl'>
+        <div className='bg-white p-8 my-[-30px] rounded-lg shadow-lg w-full max-w-2xl'>
             <Image src={logo} width={100} className='mx-auto'/>
             <h1 className='text-xl font-bold mb-4 flex justify-center'>Shipment Invoice</h1>
             <form className="flex flex-col gap-4" id='receipt'>
