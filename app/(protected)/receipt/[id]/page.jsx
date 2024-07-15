@@ -44,7 +44,7 @@ const page = async ({ params }) => {
                     <div className='flex flex-col w-52'>
                         <label htmlFor="qrCode" className='font-medium'>QR Code</label>
                         <img 
-                            src={`https://api.qrserver.com/v1/create-qr-code/?size=126x126&data=https://www.whitesandsagency.ky/receipt/${post.id}`}
+                            src={`https://api.qrserver.com/v1/create-qr-code/?size=126x126&data=https://www.whitesandsagency.ky/track/${post.id}`}
                             alt='QR Code'
                             className='mt-2'
                         />

@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache"
 import { db } from "../lib/db"
 
 export async function createPost(formData) {
-    await db.post.create({
+    const newPost = await db.post.create({
         data: {
             name: formData.get("name"),
             weight: formData.get("weight"),
@@ -21,6 +21,7 @@ export async function createPost(formData) {
     })
 
     revalidatePath('/dashboard')
+    return newPost.id
 }
 
 export async function editPost(formData, id) {

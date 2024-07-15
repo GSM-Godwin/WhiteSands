@@ -134,7 +134,9 @@ const Page = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     const cost = calculateShippingCost({
       weight: parseFloat(weight),
       length: parseFloat(length),
@@ -164,10 +166,11 @@ const Page = () => {
 
     emailjs.init(apiKey);
     emailjs.send('service_scrp2t7', 'template_iv3xwge', templateParams)
-      .then((result) => {
+      .then(async (result) => {
         console.log('Email sent successfully:', result.text);
-        alert('Your shipment request has been submitted. Kindly check your email for the shipment details.');
-        window.location.reload();
+
+        const postId = await createPost(new FormData(e.target));
+        window.location.href = `/receipt/${postId}`;
       }, (error) => {
         console.error('Error sending email:', error.text);
       });
