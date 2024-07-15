@@ -13,7 +13,7 @@ const ProtectedLayout = ({ children }: ProtectedLayoutProps) => {
     
     return (
         <div className="w-full px-5 py-10 flex flex-col gap-y-10 items-center justify-center">
-            {!pathName.startsWith("/dashboard") && <Navbar />}
+            {!pathName.startsWith("/dashboard") && !pathName.startsWith("/receipt") && !pathName.startsWith("/posts") && <Navbar />}
             {children}
         </div>
 )

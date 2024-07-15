@@ -19,7 +19,7 @@ const Button = ({ selector }) => {
   };
 
   return (
-    <button onClick={downloadPDF} className='border-2 border-gray-500 p-3 rounded-lg mt-5'>
+    <button onClick={() => window.print()} className='border-2 border-gray-500 p-3 rounded-lg mt-5 print:hidden'>
       Download PDF
     </button>
   );

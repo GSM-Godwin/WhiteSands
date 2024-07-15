@@ -3,6 +3,10 @@ import { db } from '../../../../lib/db'
 import { editPost } from "@/actions/posts"
 import { YesNo } from '@prisma/client';
 
+import logo from '@/public/logo.png'
+import Image from 'next/image'
+import Link from 'next/link';
+
 
 const page = async ({ params }) => {
     const post = await db.post.findUnique({
@@ -13,7 +17,9 @@ const page = async ({ params }) => {
   return (
     <div className='w-full'>
         <div>
-          <form action={editPost} className="bg-gray-100 flex flex-col gap-2">
+          <Image src={logo} width={100} className='mx-auto' />
+          <h1 className='text-2xl font-bold mb-4 flex justify-center'>Shipment Details</h1>
+          <form action={editPost} className="bg-[#F1F5F9] flex flex-col gap-2">
             <label htmlFor="name" className='flex flex-col'>
               Name
               <input type="text" name="name" placeholder="name" value={post.name} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
@@ -74,6 +80,7 @@ const page = async ({ params }) => {
                 Status
                 <input type='text' name="status" value={post.status} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
               </label>
+            <Link href={`/receipt/${post.id}`} className='border-2 bg-gray-500 hover:text-black hover:bg-transparent hover:border-gray-500 text-white transition-all duration-300 p-3 rounded-lg my-5 w-max'>View Invoice</Link>
           </form>
         </div>
     </div>

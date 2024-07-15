@@ -1,4 +1,3 @@
-"use client"
 import { Status, YesNo } from "@prisma/client"
 import { createPost } from "@/actions/posts"
 import { useEffect, useRef, useState } from "react";
@@ -250,7 +249,7 @@ const Page = () => {
           Price ($)
           <input type="text" name="price" placeholder="price" value={totalCost || 0} readOnly className="px-2 py-1 rounded-sm border-2 border-gray-500" />
         </label>
-        <button type="submit" className="bg-blue-500 py-2 text-white rounded-sm">Create Post</button>
+        <button type="submit" className="border-gray-500 border-2 py-2 rounded-sm w-max p-3">Book Shipment</button>
       </form>
     </div>
   );
