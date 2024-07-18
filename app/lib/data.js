@@ -25,6 +25,6 @@ export const cards = [
         id: 3,
         title: "Pending Transactions",
         number: pendingPosts.length,
-        href: "/dashboard/transactions/pending"
+        href: "/dashboard/transactions"
     },
 ];
