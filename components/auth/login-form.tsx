@@ -80,7 +80,7 @@ export const LoginForm = () => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-6"
           >
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               {showTwoFactor && (
                 <FormField 
                   control={form.control}
@@ -151,16 +151,16 @@ export const LoginForm = () => {
                   />
                 </>
               )}
-            </div>
+            </div> */}
             <FormError message={error || urlError} />
             <FormSuccess message={success} />
-            <Button
+            {/* <Button
             disabled={isPending}
               type="submit"
               className="w-full"
             >
               {showTwoFactor ? "Confirm" : "Login"}
-            </Button>
+            </Button> */}
           </form>
         </Form>
     </CardWrapper>

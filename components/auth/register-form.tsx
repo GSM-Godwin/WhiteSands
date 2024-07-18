@@ -60,7 +60,7 @@ export const RegisterForm = () => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-6"
           >
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
             <FormField 
                 control={form.control}
                 name="name"
@@ -115,16 +115,16 @@ export const RegisterForm = () => {
                   </FormItem>
                 )}
               />
-            </div>
+            </div> */}
             <FormError message={error} />
             <FormSuccess message={success} />
-            <Button
+            {/* <Button
             disabled={isPending}
               type="submit"
               className="w-full"
             >
               Create an acount
-            </Button>
+            </Button> */}
           </form>
         </Form>
     </CardWrapper>
