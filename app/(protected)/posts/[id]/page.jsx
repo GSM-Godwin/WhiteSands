@@ -24,6 +24,10 @@ const page = async ({ params }) => {
               Name
               <input type="text" name="name" placeholder="name" value={post.name} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
             </label>
+            <label htmlFor="id" className='flex flex-col'>
+              Name
+              <input type="text" name="id" placeholder="id" value={post.id} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
+            </label>
             <label htmlFor="weight" className='flex flex-col'>
               Weight(kg)
               <input type="text" name="weight" placeholder="weight" value={post.weight} className="px-2 py-1 rounded-sm border-2 border-gray-500" />

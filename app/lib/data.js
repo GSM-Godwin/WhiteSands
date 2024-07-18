@@ -1,7 +1,12 @@
 import { db } from "@/lib/db"
 
-const users = await db.user.findMany()
-const posts = await db.post.findMany()
+const users = await db.user.findMany();
+const posts = await db.post.findMany();
+const pendingPosts = await db.post.findMany({
+    where: {
+        status: "PENDING"
+    }
+});
 
 export const cards = [
     {
@@ -16,4 +21,10 @@ export const cards = [
         number: posts.length,
         href: "/dashboard/transactions"
     },
-]
+    {
+        id: 3,
+        title: "Pending Transactions",
+        number: pendingPosts.length,
+        href: "/dashboard/transactions/pending"
+    },
+];
