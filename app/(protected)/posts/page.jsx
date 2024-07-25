@@ -2,7 +2,7 @@
 
 import { Status, YesNo } from "@prisma/client"
 import { createPost } from "@/actions/posts"
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { useCurrentUser } from "@/hooks/use-current-user";
 import emailjs from 'emailjs-com';
 
@@ -89,6 +89,9 @@ const Page = () => {
   const [isHumanRemains, setIsHumanRemains] = useState(YesNo.NO);
   const [totalCost, setTotalCost] = useState(0);
 
+  const [isPending, startTransition] = useTransition()
+
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
@@ -136,47 +139,92 @@ const Page = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const cost = calculateShippingCost({
-      weight: parseFloat(weight),
-      length: parseFloat(length),
-      width: parseFloat(width),
-      isDangerousGoods: isDangerousGoods === 'YES',
-      isLiveAnimals: isLiveAnimals === 'YES',
-      isHumanRemains: isHumanRemains === 'YES',
-    });
+    startTransition(async () => {
+      const cost = calculateShippingCost({
+        weight: parseFloat(weight),
+        length: parseFloat(length),
+        width: parseFloat(width),
+        isDangerousGoods: isDangerousGoods === 'YES',
+        isLiveAnimals: isLiveAnimals === 'YES',
+        isHumanRemains: isHumanRemains === 'YES',
+      });
 
-    const templateParams = {
-      to: 'godwinaliu39@gmail.com',
-      pickupLocation,
-      dropoffLocation,
-      weight,
-      height,
-      length,
-      width,
-      name,
-      id,
-      email,
-      phone,
-      totalCost: cost === 'To be determined' ? cost : `$${cost}`,
-      isDangerousGoods: isDangerousGoods,
-      isLiveAnimals: isLiveAnimals,
-      isHumanRemains: isHumanRemains,
-    };
+      const templateParams = {
+        to: 'godwinaliu39@gmail.com',
+        pickupLocation,
+        dropoffLocation,
+        weight,
+        height,
+        length,
+        width,
+        name,
+        id,
+        email,
+        phone,
+        totalCost: cost === 'To be determined' ? cost : `$${cost}`,
+        isDangerousGoods: isDangerousGoods,
+        isLiveAnimals: isLiveAnimals,
+        isHumanRemains: isHumanRemains,
+      };
 
-    emailjs.init(apiKey);
-    emailjs.send('service_scrp2t7', 'template_iv3xwge', templateParams)
-      .then(async (result) => {
+      emailjs.init(apiKey);
+      try {
+        const result = await emailjs.send('service_scrp2t7', 'template_iv3xwge', templateParams);
         console.log('Email sent successfully:', result.text);
 
         const postId = await createPost(new FormData(e.target));
         window.location.href = `/receipt/${postId}`;
-      }, (error) => {
+      } catch (error) {
         console.error('Error sending email:', error.text);
-      });
+      }
+    });
   };
+
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   const cost = calculateShippingCost({
+  //     weight: parseFloat(weight),
+  //     length: parseFloat(length),
+  //     width: parseFloat(width),
+  //     isDangerousGoods: isDangerousGoods === 'YES',
+  //     isLiveAnimals: isLiveAnimals === 'YES',
+  //     isHumanRemains: isHumanRemains === 'YES',
+  //   });
+
+  //   const templateParams = {
+  //     to: 'godwinaliu39@gmail.com',
+  //     pickupLocation,
+  //     dropoffLocation,
+  //     weight,
+  //     height,
+  //     length,
+  //     width,
+  //     name,
+  //     id,
+  //     email,
+  //     phone,
+  //     totalCost: cost === 'To be determined' ? cost : `$${cost}`,
+  //     isDangerousGoods: isDangerousGoods,
+  //     isLiveAnimals: isLiveAnimals,
+  //     isHumanRemains: isHumanRemains,
+  //   };
+
+  //   emailjs.init(apiKey);
+  //   emailjs.send('service_scrp2t7', 'template_iv3xwge', templateParams)
+  //     .then(async (result) => {
+  //       console.log('Email sent successfully:', result.text);
+
+  //       const postId = await createPost(new FormData(e.target));
+  //       window.location.href = `/receipt/${postId}`;
+  //     }, (error) => {
+  //       console.error('Error sending email:', error.text);
+  //     });
+  // };
 
   useEffect(() => {
     const cost = calculateShippingCost({
@@ -254,7 +302,7 @@ const Page = () => {
           Price ($)
           <input type="text" name="price" placeholder="price" value={totalCost || 0} readOnly className="px-2 py-1 rounded-sm border-2 border-gray-500" />
         </label>
-        <button type="submit" className="border-gray-500 border-2 py-2 rounded-sm w-max p-3">Book Shipment</button>
+        <button type="submit" disabled={isPending} className={`border-gray-500 border-2 py-2 rounded-sm w-max p-3 ${isPending ? 'cursor-wait border-gray-200 text-gray-200' : ''}`}>{isPending ? 'Booking Shipment' : 'Book Shipment'}</button>
       </form>
     </div>
   );
