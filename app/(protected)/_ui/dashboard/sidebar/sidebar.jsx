@@ -3,9 +3,7 @@ import {
   MdDashboard,
   MdSupervisedUserCircle,
   MdAttachMoney,
-  MdWork,
-  MdAnalytics,
-  MdPeople
+  MdShoppingBag
 } from "react-icons/md"
 import styles from "./sidebar.module.css"
 import Image from "next/image"
@@ -34,6 +32,11 @@ const menuItems = [
         title: "Transactions",
         path: "/dashboard/transactions",
         icon: <MdAttachMoney />
+      },
+      {
+        title: "New Shipment",
+        path: "/dashboard/transactions/new",
+        icon: <MdShoppingBag />
       },
     ]
   },
