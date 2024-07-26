@@ -2,7 +2,7 @@ import { RoleGate } from "@/components/auth/role-gate"
 import { UserRole } from "@prisma/client"
 import { cards } from "../../lib/data"
 import Card from "../_ui/dashboard/card/card"
-import Transactions from "../_ui/dashboard/transactions/transactions"
+import ActiveTransactions from "../_ui/dashboard/activeTransaction/activeTransactions"
 import styles from "../_ui/dashboard/dashboard.module.css"
 import Link from "next/link"
 
@@ -18,7 +18,7 @@ const dashboard = () => {
                   </Link>
                 ))}
               </div>
-              <Transactions />
+              <ActiveTransactions />
             </div>
         </div>
     </RoleGate>

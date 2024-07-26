@@ -21,33 +21,30 @@ const page = async ({ params }) => {
                     <input type="text" name="name" placeholder="name" value={post.name} readOnly className="px-4 py-2 rounded-sm border border-gray-300" />
                 </div>
                 <div className='flex flex-col'>
+                    <label htmlFor="phone" className='font-medium'>Phone</label>
+                    <input type="tel" name="phone" placeholder="Phone" value={post.phone} readOnly className="px-4 py-2 rounded-sm border border-gray-300" />
+                </div>
+                <div className='flex flex-col'>
                     <label htmlFor="id" className='font-medium'>Shipment ID</label>
                     <input type="text" name="id" placeholder="id" value={post.id} readOnly className="px-4 py-2 rounded-sm border border-gray-300" />
                 </div>
                 <div className='flex flex-col'>
-                    <label htmlFor="pickupLocation" className='font-medium'>Pickup Location</label>
-                    <input type="text" name="pickupLocation" readOnly placeholder="pickupLocation" value={post.pickupLocation} className="px-4 py-2 rounded-sm border border-gray-300" />
-                </div>
-                <div className='flex flex-col'>
                     <label htmlFor="dropoffLocation" className='font-medium'>Dropoff Location</label>
-                    <input type="text" name="dropoffLocation" readOnly placeholder="dropoffLocation" value={post.dropoffLocation} className="px-4 py-2 rounded-sm border border-gray-300" />
+                    <input type="text" name="dropoffLocation"  placeholder="dropoffLocation" readOnly value={post.dropoffLocation} className="px-4 py-2 rounded-sm border border-gray-300" />
                 </div>
                 <div className='flex flex-col'>
-                    <label htmlFor="price" className='font-medium'>Price ($)</label>
-                    <input type="text" name="price" placeholder="price" readOnly value={post.price} className="px-4 py-2 rounded-sm border border-gray-300" />
-                </div>
-                <div className='flex flex-col'>
-                    <label htmlFor="date" className='font-medium'>Date</label>
-                    <input type="text" name='date' placeholder='date' value={new Date(post.createdAt).toLocaleString()} readOnly className="px-4 py-2 rounded-sm border border-gray-300" />
+                    <label htmlFor="date" className='font-medium'>Label Date</label>
+                    <input type="text" name='date' placeholder='date' readOnly value={new Date(post.createdAt).toLocaleString()} className="px-4 py-2 rounded-sm border border-gray-300" />
                 </div>
                 <div className='flex flex-col w-52'>
                     <label htmlFor="qrCode" className='font-medium'>QR Code</label>
                     <img 
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=126x126&data=https://www.whitesandsagency.ky/track/${post.id}`}
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=126x126&data=https://www.whitesandsagency.ky/posts/${post.id}`}
                         alt='QR Code'
                         className='mt-2'
                     />
                 </div>
+                <p>Whitesands Agency (345)922-3922</p>
             </form>
             <Button selector={'#receipt'} className='mt-6' />
         </div>

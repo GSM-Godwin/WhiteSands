@@ -1,17 +1,22 @@
-import styles from './transactions.module.css'
+import styles from './activeTransactions.module.css'
 import { db } from "@/lib/db";
 import Link from "next/link";
 import StatusDropdown from "@/app/(protected)/_components/StatusDropdown"
 
-const Transactions = async () => {
+const AcriveTransactions = async () => {
     const posts = await db.post.findMany({
+        where: {
+            status: {
+                not: "DELIVERED"
+            }
+        },
         orderBy: {
             createdAt: "desc"
         },
-    })
+    });
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Latest Transactions</h2>
+            <h2 className={styles.title}>Active Transactions</h2>
             <table className={styles.table}>
                 <thead>
                     <tr>
@@ -76,4 +81,4 @@ const Transactions = async () => {
     )
 }
 
-export default Transactions
+export default AcriveTransactions

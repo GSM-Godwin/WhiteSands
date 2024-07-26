@@ -24,24 +24,32 @@ const page = async ({ params }) => {
               Name
               <input type="text" name="name" placeholder="name" value={post.name} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
             </label>
+            <label htmlFor="name" className='flex flex-col'>
+              Phone
+              <input type="tel" name="phone" placeholder="Phone" value={post.phone} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
+            </label>
             <label htmlFor="id" className='flex flex-col'>
-              Name
+              Shipment ID
               <input type="text" name="id" placeholder="id" value={post.id} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
             </label>
             <label htmlFor="weight" className='flex flex-col'>
-              Weight(kg)
+              Weight(Pounds)
               <input type="text" name="weight" placeholder="weight" value={post.weight} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
             </label>
               <label htmlFor="height" className='flex flex-col'>
-                Height(cm)
+                Height(inches)
                 <input type="text" name="height" placeholder="height" value={post.height} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
               </label>
               <label htmlFor="length" className='flex flex-col'>
-                Length(cm)
+                Length(inches)
                 <input type="text" name="length" placeholder="length" value={post.length} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
               </label>
+              <label htmlFor="numberOfItems" className='flex flex-col'>
+                Number of Items
+                <input type="number" name="numberOfItems" placeholder="Number of Items" value={post.numberOfItems} min={0} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
+              </label>
               <label htmlFor="width" className='flex flex-col'>
-                Width(cm)
+                Width(inches)
                 <input type="text" name="width" placeholder="width" value={post.width} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
               </label>
               <label htmlFor="pickupLocation" className='flex flex-col'>
@@ -77,7 +85,7 @@ const page = async ({ params }) => {
                 </select>
               </label>  
               <label htmlFor="price" className='flex flex-col'>
-                Price
+                Estimated Price ($)
                 <input type="text" name="price" placeholder="price" value={post.price} className="px-2 py-1 rounded-sm border-2 border-gray-500" />
               </label>      
               <label htmlFor="status" className='flex flex-col'>
