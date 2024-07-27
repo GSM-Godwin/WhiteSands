@@ -2,6 +2,7 @@ import styles from './transactions.module.css'
 import { db } from "@/lib/db";
 import Link from "next/link";
 import StatusDropdown from "@/app/(protected)/_components/StatusDropdown"
+import Search from '../search/search';
 
 const Transactions = async () => {
     const posts = await db.post.findMany({
@@ -11,7 +12,10 @@ const Transactions = async () => {
     })
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Latest Transactions</h2>
+            <div className={styles.top}>
+                {/* <h2 className={styles.title}>Latest Transactions</h2> */}
+                <Search placeholder="Search for a shipment" />
+            </div>
             <table className={styles.table}>
                 <thead>
                     <tr>

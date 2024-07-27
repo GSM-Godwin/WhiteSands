@@ -10,6 +10,13 @@
     font-weight: 200;
 }
 
+.top {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .table {
     width: 100%;
 }

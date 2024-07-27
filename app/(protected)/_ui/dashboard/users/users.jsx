@@ -3,18 +3,19 @@ import styles from './users.module.css';
 import Image from "next/image";
 import pic from "../../../../../public/assets/pic.png";
 // import Pagination from "../pagination/pagination"
-// import Search from "../search/search"
+import Search from "../search/search"
 import RoleDropdown from "@/app/(protected)/_components/RoleDropdown"
 
-const Users = async () => {
+const Users = async ({ searchParams }) => {
+    const q = searchParams?.query || "";
     const users = await db.user.findMany();
 
     return (
         <div className={styles.container}>
-            {/* <div className={styles.top}>
+            <div className={styles.top}>
+                {/* <h2 className={styles.title}>Users</h2> */}
                 <Search placeholder="Search for a user" />
-            </div> */}
-            <h2 className={styles.title}>Users</h2>
+            </div>
 
             <table className={styles.table}>
                 <thead>
