@@ -2,18 +2,26 @@ import { db } from "@/lib/db";
 import styles from './users.module.css';
 import Image from "next/image";
 import pic from "../../../../../public/assets/pic.png";
-// import Pagination from "../pagination/pagination"
-import Search from "../search/search"
-import RoleDropdown from "@/app/(protected)/_components/RoleDropdown"
+import Search from "../search/search";
+import RoleDropdown from "@/app/(protected)/_components/RoleDropdown";
 
 const Users = async ({ searchParams }) => {
-    const q = searchParams?.query || "";
-    const users = await db.user.findMany();
+    const q = searchParams.q || "";
+    const users = await db.user.findMany({
+        where: {
+            OR: [
+                { name: { contains: q, mode: 'insensitive' } },
+                { email: { contains: q, mode: 'insensitive' } },
+                { id: { contains: q, mode: 'insensitive' } }
+            ]
+        }
+    });
+
+    console.log('Log', q);
 
     return (
         <div className={styles.container}>
             <div className={styles.top}>
-                {/* <h2 className={styles.title}>Users</h2> */}
                 <Search placeholder="Search for a user" />
             </div>
 
@@ -34,13 +42,13 @@ const Users = async ({ searchParams }) => {
                         <tr key={user.id}>
                             <td>
                                 <div className={styles.user}>
-                                <Image
-                                    src={pic}
-                                    alt={user.name}
-                                    width={40}
-                                    height={40}
-                                    className={styles.userImage}
-                                />
+                                    <Image
+                                        src={pic}
+                                        alt={user.name}
+                                        width={40}
+                                        height={40}
+                                        className={styles.userImage}
+                                    />
                                     {user.name}
                                 </div>
                             </td>
@@ -58,7 +66,6 @@ const Users = async ({ searchParams }) => {
                     ))}
                 </tbody>
             </table>
-            {/* <Pagination /> */}
         </div>
     );
 };

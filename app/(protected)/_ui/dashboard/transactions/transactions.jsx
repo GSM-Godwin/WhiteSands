@@ -4,8 +4,17 @@ import Link from "next/link";
 import StatusDropdown from "@/app/(protected)/_components/StatusDropdown"
 import Search from '../search/search';
 
-const Transactions = async () => {
+const Transactions = async ({ searchParams }) => {
+    const q = searchParams?.q || "";
     const posts = await db.post.findMany({
+        where: {
+            OR: [
+                { name: { contains: q, mode: 'insensitive' } },
+                { pickupLocation: { contains: q, mode: 'insensitive' } },
+                { dropoffLocation: { contains: q, mode: 'insensitive' } },
+                { id: { contains: q, mode: 'insensitive' } }
+            ]
+        },
         orderBy: {
             createdAt: "desc"
         },
