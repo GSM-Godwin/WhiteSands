@@ -26,9 +26,20 @@ export async function createPost(formData) {
 
 export async function editPost(formData, id) {
     await db.post.update({
-        where: isHumanRemains,
+        where: { id },
         data: {
-            isHumanRemains: formData.get("humanRemains"),
+            name: formData.get("name"),
+            weight: formData.get("weight"),
+            height: formData.get("height"),
+            length: formData.get("length"),
+            width: formData.get("width"),
+            pickupLocation: formData.get("pickupLocation"),
+            dropoffLocation: formData.get("dropoffLocation"),
+            isDangerousGoods: formData.get("isDangerousGoods"),
+            isLiveAnimals: formData.get("isLiveAnimals"),
+            isHumanRemains: formData.get("isHumanRemains"),
+            status: formData.get("status"),
+            price: formData.get("price"),
         }
     })
     revalidatePath('/dashboard')
