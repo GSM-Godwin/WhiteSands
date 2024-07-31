@@ -22,8 +22,8 @@ import {
 } from "@/data/two-factor-confirmation";
 
 export const login = async (
-    values: z.infer<typeof LoginSchema>,
-    callbackUrl?:string | null,
+    values,
+    callbackUrl,
 ) => {
     const validatedFields = LoginSchema.safeParse(values)
 
