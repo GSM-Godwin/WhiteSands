@@ -27,7 +27,7 @@ enum UserRole {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            Int      @id @default(autoincrement())
   name          String?
   email         String?   @unique
   emailVerified DateTime?
@@ -46,7 +46,7 @@ model User {
 model Account {
   id                 String  @id @default(cuid())
   image              String?
-  userId             String
+  userId             Int
   type               String
   provider           String
   providerAccountId  String
@@ -93,7 +93,7 @@ model TwoFactorToken {
 model TwoFactorConfirmation {
   id  String  @id @default(cuid())
 
-  userId  String
+  userId  Int
   user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
   @@unique([userId])
 }
@@ -101,7 +101,7 @@ model TwoFactorConfirmation {
 model Transaction {
   id                String   @id @default(cuid())
   name              String
-  userId            String
+  userId            Int
   weight            String
   height            String
   length            String
@@ -122,12 +122,14 @@ model Transaction {
 }
 
 model Post {
-  id String @id @default(cuid())
-  name String
+  id String @id
+  name    String
+  phone   String
   weight  String
   height  String
   length  String
   width   String
+  numberOfItems     String
   pickupLocation    String
   dropoffLocation   String
   isDangerousGoods    YesNo

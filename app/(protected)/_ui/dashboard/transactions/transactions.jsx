@@ -56,7 +56,7 @@ const Transactions = async ({ searchParams }) => {
                             </td>
                             <td>
                                 <li className="list-none" key={post.id}>
-                                    <Link href={`/dashboard/transactions/${post.id}`} target='_blank'>
+                                    <Link href={`/posts/${post.id}`} target='_blank'>
                                         {post.id}
                                     </Link>
                                 </li>

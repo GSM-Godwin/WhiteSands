@@ -48,7 +48,7 @@ const AcriveTransactions = async () => {
                             </td>
                             <td>
                                 <li className="list-none" key={post.id}>
-                                    <Link href={`/posts/${post.id}`} target='_blank'>
+                                    <Link href={`/dashboard/transactions/${post.id}`} target='_blank'>
                                         {post.id}
                                     </Link>
                                 </li>

@@ -6,13 +6,13 @@ import Search from "../search/search";
 import RoleDropdown from "@/app/(protected)/_components/RoleDropdown";
 
 const Users = async ({ searchParams }) => {
-    const q = searchParams.q || "";
+    const q = searchParams?.q || "";
     const users = await db.user.findMany({
         where: {
             OR: [
                 { name: { contains: q, mode: 'insensitive' } },
                 { email: { contains: q, mode: 'insensitive' } },
-                { id: { contains: q, mode: 'insensitive' } }
+                // { id: { contains: q, mode: 'insensitive'} }
             ]
         }
     });
@@ -52,7 +52,7 @@ const Users = async ({ searchParams }) => {
                                     {user.name}
                                 </div>
                             </td>
-                            <td>{user.id}</td>
+                            <td>{`WA-${user.id}`}</td>
                             <td>{user.email}</td>
                             <td>
                                 <li className="list-none" key={user.id}>

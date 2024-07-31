@@ -8,9 +8,11 @@ import { RegisterSchema } from "@/schemas";
 import { getUserByEmail } from "@/data/user";
 import { sendVerificationEmail } from "@/lib/mail";
 import { generateVerificationToken } from "@/lib/tokens";
+import generateUserId from '@/components/auth/generateUserId'
 
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
     const validatedFields = RegisterSchema.safeParse(values)
+    const userId = await generateUserId()
 
     if(!validatedFields.success) {
         return { error: "Invalid fields" }
