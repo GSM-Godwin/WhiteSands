@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/about/page.jsx", "actions/settings.js", "app/page.jsx", "auth.js", "middleware.js", "actions/transactions.js", "actions/register.ts", "actions/login.js", "app/(protected)/actions.js", "auth.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/about/page.jsx", "actions/settings.js", "app/page.jsx", "auth.js", "middleware.js", "actions/transactions.js", "actions/register.ts", "actions/login.js", "app/(protected)/actions.js", "auth.config.js", "data/account.ts"],
   "exclude": ["node_modules"]
 }
