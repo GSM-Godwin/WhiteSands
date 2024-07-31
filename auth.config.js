@@ -1,5 +1,4 @@
 import bcrypt from "bcryptjs"
-import type { NextAuthConfig } from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import Apple from "next-auth/providers/apple"
 import Google from "next-auth/providers/google"
@@ -36,4 +35,4 @@ export default {
       }
     })
   ]
-  } satisfies NextAuthConfig
+  }
