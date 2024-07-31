@@ -2,14 +2,11 @@
 
 import { db } from "@/lib/db"
 import { Status, UserRole } from "@prisma/client"
-import { string } from "zod"
+import { string, number } from "zod"
 
 export const changeOrderStatus = async ({
     id,
     newStatus,
-}: {
-    id: number
-    newStatus: Status
 }) => {
     await db.post.update({
         where: { id },
@@ -21,9 +18,6 @@ export const changeOrderStatus = async ({
 export const changeUserRole = async ({
     id,
     newRole,
-}: {
-    id: string
-    newRole: UserRole
 }) => {
     await db.user.update({
         where: { id },
