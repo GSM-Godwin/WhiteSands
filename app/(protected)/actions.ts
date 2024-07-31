@@ -8,7 +8,7 @@ export const changeOrderStatus = async ({
     id,
     newStatus,
 }: {
-    id: string
+    id: number
     newStatus: Status
 }) => {
     await db.post.update({
