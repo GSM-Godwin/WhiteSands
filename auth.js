@@ -69,7 +69,11 @@ export const {
                 session.user.phone = token.phone;
                 session.user.address = token.address;
                 session.user.post = token.post
+                session.user.role = session.role
             }
+
+            console.log("Session User:", session.user);
+            console.log("Token:", token)
 
             return session
         },

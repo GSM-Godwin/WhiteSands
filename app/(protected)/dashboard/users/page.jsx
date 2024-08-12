@@ -4,11 +4,11 @@ import { UserRole } from "@prisma/client"
 
 const UsersPage = async ({ searchParams }) => {
   return (
-    <RoleGate allowedRole={UserRole.ADMIN}>
+    // <RoleGate allowedRole={UserRole.ADMIN}>
       <div>
         <Users searchParams={searchParams} />
       </div>
-    </RoleGate>
+    // </RoleGate>
   )
 }
 

@@ -4,18 +4,21 @@ import {
     CardContent, 
     CardHeader 
 } from "./ui/card";
-import { Badge } from "./ui/badge";
+// import { Badge } from "./ui/badge";
 
 interface UserInfoProps {
     user?: ExtendedUser;
     label: string
 }
 
+
 export const UserInfo = ({
     user,
     label,
     
 }: UserInfoProps) => {
+    console.log(user);
+    
     return (
         <Card className="w-full md:w-[600px] shadow-lg">           
             <CardHeader>
@@ -72,22 +75,22 @@ export const UserInfo = ({
                         {user?.post}
                     </p>
                 </div>
-                <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+                {/* <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
                     <p className="text-xs lg:text-sm font-medium">
                         Role
                     </p>
                     <p className="truncate text-xs max-w-[180px] font-mono p-1 bg-slate-100 rounded-md">
                         {user?.role}
                     </p>
-                </div>
-                <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+                </div> */}
+                {/* <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
                     <p className="text-xs lg:text-sm font-medium">
                         Two Factor Authentication
                     </p>
                     <Badge variant={user?.isTwoFactorEnabled ? "success" : "destructive"}>
                         {user?.isTwoFactorEnabled ? "ON" : "OFF"}
                     </Badge>
-                </div>
+                </div> */}
             </CardContent>
         </Card>
     )
