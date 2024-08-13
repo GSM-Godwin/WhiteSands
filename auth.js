@@ -1,12 +1,13 @@
-import NextAuth from "next-auth"
+import NextAuth from "next-auth";
 import { UserRole } from "@prisma/client";
-import { PrismaAdapter } from "@auth/prisma-adapter"
+import { PrismaAdapter } from "@auth/prisma-adapter";
 
 import { db } from "./lib/db";
 import authConfig from "./auth.config";
 import { getUserById } from "./data/user";
 import { getTwoFactorConfirmationByUserId } from "./data/two-factor-confirmation";
 import { getAccountByUserId } from "./data/account";
+import { sendWelcomeEmail } from "./utils/email";
 
 export const {
     handlers: { GET, POST },
@@ -23,13 +24,25 @@ export const {
             await db.user.update({
                 where: { id: user.id },
                 data: { emailVerified: new Date() }
-            })
+            });
         }
     },
     callbacks: {
         async signIn({ user, account }) {
             // Allow OAuth without email verification
-            if (account?.provider != "credentials") return true;
+            if (account?.provider !== "credentials") {
+                const existingUser = await getUserById(user.id);
+
+                if (!existingUser) {
+                    // User is new, send a welcome email
+                    console.log(`New User!: ${user.email}`);
+                    await sendWelcomeEmail(user.email);
+                    
+                    // sendWelcomeEmail(user.email);
+                }
+
+                return true;
+            }
 
             const existingUser = await getUserById(user.id);
 
@@ -44,22 +57,22 @@ export const {
                 // Delete two factor confirmation for next sign in
                 await db.twoFactorConfirmation.delete({
                     where: { id: twoFactorConfirmation.id }
-                })
+                });
             }
 
-            return true
+            return true;
         },
         async session({ token, session }) {
             if (token.sub && session.user) {
                 session.user.id = token.sub;
             }
-            
+
             if (token.role && session.user) {
-                session.user.role = token.role
+                session.user.role = token.role;
             }
-            
+
             if (session.user) {
-                session.user.isTwoFactorEnabled = token.isTwoFactorEnabled
+                session.user.isTwoFactorEnabled = token.isTwoFactorEnabled;
             }
 
             if (session.user) {
@@ -68,14 +81,14 @@ export const {
                 session.user.isOauth = token.isOauth;
                 session.user.phone = token.phone;
                 session.user.address = token.address;
-                session.user.post = token.post
-                session.user.role = session.role
+                session.user.post = token.post;
+                session.user.role = session.role;
             }
 
-            console.log("Session User:", session.user);
-            console.log("Token:", token)
+            // console.log("Session User:", session.user);
+            // console.log("Token:", token);
 
-            return session
+            return session;
         },
         async jwt({ token }) {
             if (!token.sub) return token;
@@ -84,23 +97,21 @@ export const {
 
             if (!existingUser) return token;
 
-            const existingAccount = await getAccountByUserId(
-                existingUser.id
-            )
+            const existingAccount = await getAccountByUserId(existingUser.id);
 
             token.isOauth = !!existingAccount;
             token.name = existingUser.name;
             token.email = existingUser.email;
             token.role = existingUser.role;
-            token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled,
+            token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
             token.phone = existingUser.phone;
             token.address = existingUser.address;
-            token.post = existingUser.post
+            token.post = existingUser.post;
 
-            return token
+            return token;
         }
     },
     adapter: PrismaAdapter(db),
-    session: { strategy: "jwt"},
-    ...authConfig, 
+    session: { strategy: "jwt" },
+    ...authConfig,
 });

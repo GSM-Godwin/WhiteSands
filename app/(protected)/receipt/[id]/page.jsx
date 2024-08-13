@@ -33,13 +33,13 @@ const page = async ({ params }) => {
                     <input type="text" name="dropoffLocation"  placeholder="dropoffLocation" readOnly value={post.dropoffLocation} className="px-4 py-2 rounded-sm border border-gray-300" />
                 </div>
                 <div className='flex flex-col'>
-                    <label htmlFor="date" className='font-medium'>Label Date</label>
+                    <label htmlFor="date" className='font-medium'>Last Updated</label>
                     <input type="text" name='date' placeholder='date' readOnly value={new Date(post.createdAt).toLocaleString()} className="px-4 py-2 rounded-sm border border-gray-300" />
                 </div>
                 <div className='flex flex-col w-52'>
                     <label htmlFor="qrCode" className='font-medium'>QR Code</label>
                     <img 
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=126x126&data=https://www.whitesandsagency.ky/posts/${post.id}`}
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=126x126&data=https://www.whitesandsagency.ky/receipt/${post.id}`}
                         alt='QR Code'
                         className='mt-2'
                     />
