@@ -85,8 +85,8 @@ export const {
                 session.user.role = session.role;
             }
 
-            // console.log("Session User:", session.user);
-            // console.log("Token:", token);
+            console.log("Session User:", session.user);
+            console.log("Token:", token);
 
             return session;
         },
