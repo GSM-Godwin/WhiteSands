@@ -8,7 +8,7 @@ import Link from "next/link"
 
 const dashboard = () => {
   return (
-    // <RoleGate allowedRole={UserRole.ADMIN}>
+    <RoleGate allowedRole={UserRole.ADMIN}>
         <div className={styles.wrapper}>
             <div className={styles.main}>
               <div className={styles.cards}>
@@ -21,7 +21,7 @@ const dashboard = () => {
               <ActiveTransactions />
             </div>
         </div>
-    // </RoleGate>
+     </RoleGate>
   )
 }
 

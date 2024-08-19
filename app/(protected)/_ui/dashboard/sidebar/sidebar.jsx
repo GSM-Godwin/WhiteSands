@@ -46,7 +46,7 @@ const Sidebar = () => {
   const user = useCurrentUser();
 
   return (
-    // <RoleGate allowedRole={UserRole.ADMIN}>
+    <RoleGate allowedRole={UserRole.ADMIN}>
       <div className={styles.container}>
         <div className={styles.user}>
           <UserButton />
@@ -66,7 +66,7 @@ const Sidebar = () => {
           ))}
         </ul>
       </div>
-    // </RoleGate>
+     </RoleGate>
   )
 }
 

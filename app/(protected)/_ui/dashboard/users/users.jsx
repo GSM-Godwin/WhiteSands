@@ -16,9 +16,7 @@ const Users = async ({ searchParams }) => {
             ]
         }
     });
-
-    console.log('Log', q);
-
+    
     return (
         <div className={styles.container}>
             <div className={styles.top}>

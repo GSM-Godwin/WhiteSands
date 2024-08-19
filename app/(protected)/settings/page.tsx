@@ -36,9 +36,11 @@ import { useCurrentUser } from "@/hooks/use-current-user"
 import { FormError } from "@/components/form-error"
 import { FormSuccess } from "@/components/form-success"
 import { UserRole } from "@prisma/client"
+import { useRouter } from "next/navigation"
 
 const SettingsPage = () => {
   const user = useCurrentUser();
+  const router = useRouter()
 
   const [error, setError] = useState<string | undefined>()
   const [success, setSuccess] = useState<string | undefined>()
@@ -71,6 +73,7 @@ const SettingsPage = () => {
           if (data.success) {
             update();
             setSuccess(data.success)
+            router.push('/server')
           }
         })
         .catch(() => setError("Something went wrong!"))
@@ -171,11 +174,11 @@ const SettingsPage = () => {
                 name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone</FormLabel>
+                    <FormLabel>(Area code) Phone</FormLabel>
                     <FormControl>
                       <Input 
                         {...field}
-                        placeholder="+123 4567890"
+                        placeholder="(+123) 4567890"
                         disabled={isPending}
                         type="tel"
                       />

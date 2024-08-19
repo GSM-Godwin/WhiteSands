@@ -45,10 +45,16 @@ export const sendWelcomeEmail = async (email: string) => {
         <p>Here’s a quick overview of what you can expect from us:</p>
         <ul>
             <li><strong>Personalized Service:</strong> Our dedicated account managers are here to understand your business requirements and provide customized logistics solutions.</li>
-            <li><strong>State-of-the-Art Technology:</strong> We utilize the latest technology to track shipments, manage inventory, and ensure timely deliveries.</li>
             <li><strong>24/7 Support:</strong> Our customer service team is available around the clock to assist with any inquiries or issues you may have.</li>
         </ul>
         <p>To get started, please find attached our welcome packet, which includes essential information about our services and how to access your account. If you have any questions or need immediate assistance, feel free to reach out to us directly at (345)922-3922 or contact our support team at whitesandsky@outlook.com.</p>
+        <p>Your USA mailing address is to be used as follows:
+            <p>Woodvine- Your name</p>
+            <p>5600NW 72nd Ave</p>
+            <p>#669461</p>
+            <p>Miami, FI</p>
+            <p>33166</p>
+        </p>
         <p>Thank you for choosing Whitesands Agency. We look forward to a successful partnership and are committed to supporting your logistics needs every step of the way.</p>
         <p>Best regards,</p>
         <p>Whitesands Agency</p>

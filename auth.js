@@ -37,14 +37,14 @@ export const {
                     // User is new, send a welcome email
                     console.log(`New User!: ${user.email}`);
                     await sendWelcomeEmail(user.email);
+                    window.alert("Registration Complete! Please check your email for further instructions.")
                     
-                    // sendWelcomeEmail(user.email);
                 }
 
                 return true;
             }
 
-            const existingUser = await getUserById(user.id);
+            const existingUser = await getUserById(user.id);            
 
             // Prevent SignIn without email verification
             if (!existingUser?.emailVerified) return false;
@@ -82,18 +82,24 @@ export const {
                 session.user.phone = token.phone;
                 session.user.address = token.address;
                 session.user.post = token.post;
-                session.user.role = session.role;
+                session.user.role = token.role;
             }
 
             console.log("Session User:", session.user);
             console.log("Token:", token);
+            console.log("User:", token.sub);
+            
+
+            console.log();
+            
 
             return session;
         },
         async jwt({ token }) {
             if (!token.sub) return token;
 
-            const existingUser = await getUserById(token.sub);
+            const UserId = parseInt(token.sub, 10)
+            const existingUser = await getUserById(UserId);
 
             if (!existingUser) return token;
 

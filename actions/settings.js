@@ -16,13 +16,14 @@ export const settings = async (
     const user = await currentUser()
 
     if (!user) {
-        return { error: "Unauthorized!" }
+        return { error: "Unauthorized User!" }
     }
 
-    const dbUser = await getUserById(user.id);
+    const UserId = parseInt(user.id, 10)
+    const dbUser = await getUserById(UserId);
 
     if (!dbUser) {
-        return { error: "Unauthorized!" }
+        return { error: "Unauthorized dbUser!" }
     }
 
     if (user.isOauth) {

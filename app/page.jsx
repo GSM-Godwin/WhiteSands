@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import {FaArrowRight, FaArrowCircleRight } from "react-icons/fa"
 
@@ -17,9 +17,11 @@ import pic from "@/public/assets/pic.png"
 import woodvine from "@/public/assets/woodvine.jpg"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 
 export default function Home() {
+  const { data: session } = useSession();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [trackingNumber, setTrackingNumber] = useState("")
@@ -34,7 +36,6 @@ export default function Home() {
 
   const handleChange = (e) => {
     setTrackingNumber(e.target.value);
-    console.log(trackingNumber);
   }
 
   const handleButtonClick = (e) => {
@@ -73,6 +74,18 @@ export default function Home() {
         </ul>`
     }
   ];
+
+  useEffect(() => {
+    if (session?.user) {
+      const { address, phone, post } = session.user;
+
+      if (!address || !phone || !post) {
+        alert(
+          "Your Profile information is incomplete. Please update your details at the settings page."
+        );
+      }
+    }
+  }, [session, router]);
   
 
   return (
