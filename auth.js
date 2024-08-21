@@ -36,9 +36,7 @@ export const {
                 if (!existingUser) {
                     // User is new, send a welcome email
                     console.log(`New User!: ${user.email}`);
-                    await sendWelcomeEmail(user.email);
-                    window.alert("Registration Complete! Please check your email for further instructions.")
-                    
+                    await sendWelcomeEmail(user.email);                    
                 }
 
                 return true;
