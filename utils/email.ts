@@ -22,11 +22,6 @@ export const sendWelcomeEmail = async (email: string) => {
         html: `
         <strong>Welcome to Whitesands Agency!</strong>
         <p>We are thrilled to have you as a valued partner. At Whitesands Agency, we pride ourselves on providing top-notch logistics solutions tailored to meet your unique needs. Our team is dedicated to ensuring your experience with us is seamless and efficient.</p>
-        <p>Here’s a quick overview of what you can expect from us:</p>
-        <ul>
-            <li><strong>Personalized Service:</strong> Our dedicated account managers are here to understand your business requirements and provide customized logistics solutions.</li>
-            <li><strong>24/7 Support:</strong> Our customer service team is available around the clock to assist with any inquiries or issues you may have.</li>
-        </ul>
         <strong>Your USA mailing address is to be used as follows: <br />
             Woodvine - Your name <br />
             5600 NW 72nd Ave <br />
@@ -35,8 +30,6 @@ export const sendWelcomeEmail = async (email: string) => {
             33166
         </strong>
         <p>Thank you for choosing Whitesands Agency. We look forward to a successful partnership and are committed to supporting your logistics needs every step of the way.</p>
-        <p>Best regards,</p>
-        <p>Whitesands Agency</p>
     `,
     };
 
