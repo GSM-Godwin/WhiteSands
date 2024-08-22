@@ -71,8 +71,7 @@ const SettingsPage = () => {
         } else if (data.success) {
           update();
           setSuccess(data.success);
-          const email = String(user?.email);
-          await sendWelcomeEmail(email);
+          // await sendWelcomeEmail(email);
           window.alert("Your profile is all set! Please check your inbox for a welcome email.")
         }
       } catch (error) {

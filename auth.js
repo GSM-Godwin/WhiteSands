@@ -35,7 +35,8 @@ export const {
 
                 if (!existingUser) {
                     // User is new, send a welcome email
-                    console.log(`New User!: ${user.email}`);                    
+                    console.log(`New User!: ${user.email}`);
+                    await sendWelcomeEmail(user.email);                    
                 }
 
                 return true;
