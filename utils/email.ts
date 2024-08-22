@@ -30,6 +30,8 @@ export const sendWelcomeEmail = async (email: string) => {
             33166
         </strong>
         <p>Thank you for choosing Whitesands Agency. We look forward to a successful partnership and are committed to supporting your logistics needs every step of the way.</p>
+        <p>Best regards, <br />
+        Whitesands Agency</p>
     `,
     };
 
