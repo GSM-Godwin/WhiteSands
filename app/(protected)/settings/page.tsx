@@ -214,9 +214,9 @@ const SettingsPage = () => {
                     <FormControl>
                       <Input 
                         {...field}
-                        placeholder="100034"
+                        placeholder="ky-1107"
                         disabled={isPending}
-                        type="number"
+                        type="text"
                       />
                     </FormControl>
                     <FormMessage />
