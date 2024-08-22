@@ -8,9 +8,9 @@ export const SettingsSchema = z.object({
     email: z.optional(z.string().email()),
     password: z.optional(z.string().min(6)),
     newPassword: z.optional(z.string().min(6)),
-    address: z.optional(z.string()),
-    post: z.optional(z.string().min(4)),
-    phone: z.optional(z.string().min(4))
+    phone: z.string().min(1),
+  address: z.string().min(1),
+  post: z.string().min(1),
 })
     .refine((data) => {
         if (data.password && !data.newPassword) {

@@ -37,10 +37,10 @@ import { FormError } from "@/components/form-error"
 import { FormSuccess } from "@/components/form-success"
 import { UserRole } from "@prisma/client"
 import { useRouter } from "next/navigation"
+import { sendWelcomeEmail } from "@/utils/email"
 
 const SettingsPage = () => {
   const user = useCurrentUser();
-  const router = useRouter()
 
   const [error, setError] = useState<string | undefined>()
   const [success, setSuccess] = useState<string | undefined>()
@@ -63,22 +63,23 @@ const SettingsPage = () => {
   })
 
   const onSubmit = (values: z.infer<typeof SettingsSchema>) => {
-    startTransition(() => {
-      settings(values)
-        .then((data) => {
-          if (data.error) {
-            setError(data.error);
-          }
-
-          if (data.success) {
-            update();
-            setSuccess(data.success)
-            router.push('/server')
-          }
-        })
-        .catch(() => setError("Something went wrong!"))
-    })
-  }
+    startTransition(async () => {
+      try {
+        const data = await settings(values);
+        if (data.error) {
+          setError(data.error);
+        } else if (data.success) {
+          update();
+          setSuccess(data.success);
+          const email = String(user?.email);
+          await sendWelcomeEmail(email);
+          window.alert("Your profile is all set! Please check your inbox for a welcome email.")
+        }
+      } catch (error) {
+        setError("Something went wrong!");
+      }
+    });
+  };
 
   return (
     <Card className="w-full md:w-[600px]">
@@ -214,9 +215,9 @@ const SettingsPage = () => {
                     <FormControl>
                       <Input 
                         {...field}
-                        placeholder="100034"
+                        placeholder="ky-1107"
                         disabled={isPending}
-                        type="number"
+                        type="text"
                       />
                     </FormControl>
                     <FormMessage />

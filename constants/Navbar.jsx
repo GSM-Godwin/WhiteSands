@@ -42,8 +42,8 @@ const Navbar = () => {
             <NavItem href="/services" label="Services" />
             <NavItem href="/contact" label="Contact Us" />
           </div>
-          {user ? <a href="/booking" className='bg-[#FF3514] p-2 text-white'>Book Now</a> : <a href="/auth/register" className='bg-[#FF3514] p-2 text-white'>Register</a>}
-        </div>
+          {user ? <a href="/settings" className='bg-[#FF3514] p-2 text-white'>Register</a> : <a href="/auth/register" className='bg-[#FF3514] p-2 text-white'>Register</a>}
+          </div>
         {/* <div className='flex items-center justify-center'>
           <FaSearch />
         </div> */}
@@ -64,7 +64,7 @@ const Navbar = () => {
                 <NavItem href="/services" label="Services" />
                 <NavItem href="/contact" label="Contact Us" />
               </div>
-              {user ? <a href="/booking" className='bg-[#FF3514] p-2 text-white'>Book Now</a> : <a href="/auth/register" className='bg-[#FF3514] p-2 text-white'>Register</a>}
+              {user ? <a href="/settings" className='bg-[#FF3514] p-2 text-white'>Register</a> : <a href="/auth/register" className='bg-[#FF3514] p-2 text-white'>Register</a>}
               </div>
             {/* <div className='flex items-center justify-center'>
               <FaSearch />

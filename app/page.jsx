@@ -81,7 +81,7 @@ export default function Home() {
 
       if (!address || !phone || !post) {
         alert(
-          "Your Profile information is incomplete. Please update your details at the settings page."
+          "Your Profile information is incomplete. Please click the Register button update your details at the settings page."
         );
       }
     }
