@@ -15,7 +15,7 @@ export const sendWelcomeEmail = async (email: string) => {
     const mailOptions = {
         from: {
             name: "Whitesands Agency",
-            address: "whitesandsagencyky@gmail.com"
+            address: process.env.EMAIL
         },
         to: email,
         subject: "Welcome to Whitesands Agency!",
