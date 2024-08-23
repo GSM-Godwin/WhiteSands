@@ -21,7 +21,7 @@ export const sendWelcomeEmail = async (email: string) => {
         subject: "Welcome to Whitesands Agency!",
         html: `
         <strong>Welcome to Whitesands Agency!</strong>
-        <p>We are thrilled to have you as a valued partner. At Whitesands Agency, we pride ourselves on providing top-notch logistics solutions tailored to meet your unique needs. Our team is dedicated to ensuring your experience with us is seamless and efficient.</p>
+        <p>We are thrilled to have you as a valued partner. At Whitesands Agency, we pride ourselves on providing top-notch logistic solutions tailored to meet your unique needs. Our team is dedicated to ensuring your experience with us is seamless and efficient.</p>
         <strong>Your USA mailing address is to be used as follows: <br />
             Woodvine - Your name <br />
             5600 NW 72nd Ave <br />
